@@ -1,0 +1,68 @@
+/* Import fonts */
+@import url("https://fonts.cdnfonts.com/css/tw-cen-mt-std");
+
+/* Variables */
+:root {
+  --text_font: "Roboto", sans-serif;
+
+  /* ! Colour Theming */
+  --mainpurple: #6008ac;
+  --lightpurple: #b084cc;
+  --yellowalt: #edbd2d;
+  --lightyellow: #f8e09a;
+  --mainwhite: #f4f4f9;
+  --mainblack: #000000;
+  --maingrey: #ccc;
+}
+
+body {
+    background-color: var(--mainwhite);
+    font-family: var(--text_font);
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: var(--mainblack);
+    
+    
+}
+
+
+
+.page_text_container {
+    position: relative;
+  text-align: center;
+  padding: 0px;
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.page_content {
+    width: 75%;  
+    margin: 5px;
+}
+
+.outer-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+figcaption {
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+    outline: 1px solid var(--maingrey);
+    padding:5px
+}
+
+footer {
+  border-top: var(--maingrey) 5px solid;
+}
+
+/* ! Specific Text Settings */
+
+.text_computer {
+  font-family: 'Courier New', Courier, monospace;
+}

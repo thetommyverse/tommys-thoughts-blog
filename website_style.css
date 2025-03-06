@@ -1,0 +1,892 @@
+/* ! Global Formatting, Styling and Positioning */
+/* ! ------------------- */
+
+/* Import fonts */
+@import url("https://fonts.cdnfonts.com/css/tw-cen-mt-std");
+
+/* Variables */
+:root {
+  --text_font: "Roboto", sans-serif;
+
+  /* ! Colour Theming */
+  --mainpurple: #6008ac;
+  --lightpurple: #b084cc;
+  --yellowalt: #edbd2d;
+  --lightyellow: #f8e09a;
+  --mainwhite: #f4f4f9;
+  --mainblack: #000000;
+  --maingrey: #ccc;
+}
+
+/* ! Page-Wide Styling */
+
+/* Dark Mode Styling */
+
+body {
+  background-color: var(--mainwhite);
+  color: var(--mainblack);
+  font-family: var(--text_font);
+  margin: 0;
+  padding: 0;
+}
+
+.dark-mode {
+  background-color: var(--mainblack);
+  color: var(--mainwhite);
+}
+
+.dark-mode #tags {
+  background-color: var(--mainblack);
+  color: var(--mainwhite);
+}
+
+.dark-mode .w3-tag {
+  background-color: var(--mainwhite);
+  color: var(--mainblack);
+}
+
+.dark_mode_button {
+  margin: 15px 15px 15px 15px;
+  position: absolute;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+
+.dark-mode .dark_mode_button {
+  background-color: var(--mainblack);
+  color: var(--mainwhite);
+}
+
+p {
+  font-family: var(--text_font);
+  font-size: 1.2em;
+}
+
+.pages_titles_container {
+  text-align: center;
+  margin-top: 25px;
+}
+.pages_titles_container_alt {
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* Inline links styling */
+.inline_link {
+  color: var(--mainpurple);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 0px;
+}
+
+a:hover {
+  background-color: var(--mainpurple);
+  color: var(--mainwhite);
+  transition: 0.2s;
+  padding: 5px 0px;
+}
+
+/* Inline links styling */
+.inline_link_alt {
+  color: var(--lightpurple);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 0px;
+}
+
+.inline_link_alt:hover {
+  background-color: var(--lightyellow);
+  color: var(--mainblack);
+  transition: 0.2s;
+  padding: 5px 0px;
+}
+
+/* Page Text Content styling */
+.page_text_container {
+  position: relative;
+  text-align: center;
+  padding: 0px;
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.page_text_div {
+  width: 75%;
+}
+
+@media screen and (max-width: 560px) {
+  .page_text_div {
+    width: 90%;
+  }
+}
+
+/* ! ------------------- */
+
+/* ! Homepage Formatting and Positioning */
+/* ! ------------------- */
+
+.Home_header {
+  position: relative;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 25px;
+}
+
+.Home_container {
+  position: relative;
+  text-align: center;
+  padding: 0px;
+
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Home_div {
+  width: 60%;
+}
+
+/* Image Profile Pic on the homepage */
+.Home_img {
+  border-radius: 50%;
+  width: 280px;
+  height: auto;
+}
+
+@media screen and (max-width: 560px) {
+  .Home_img {
+    width: 100%;
+  }
+}
+
+/* ! ------------------- */
+
+/* ! Titles, Text and Fonts */
+/* ! ------------------- */
+
+/* Variables */
+:root {
+  --title_font: var(--text_font);
+}
+
+/* Heading 1 (custom) */
+.title1 {
+  font-family: var(--title_font);
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading 2 (custom) */
+.title2 {
+  font-family: var(--title_font);
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading 3 (custom) */
+.title3 {
+  font-family: var(--title_font);
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading 4 (custom) */
+.title4 {
+  font-family: var(--title_font);
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading 5 (custom) */
+.title5 {
+  font-family: var(--title_font);
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+/* ! ------------------- */
+
+/* ! Fade-In Tabs Styling */
+/* ! ------------------- */
+
+/* Remove tab text on small screens */
+@media screen and (max-width: 900px) {
+  .tab_labels {
+    display: none;
+  }
+}
+
+/* Style the tab wrapper */
+.tabWrapper {
+  /* Center the buttons inside the tab */
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  /* No borders */
+  border: 0px;
+  /* Bottom border */
+  border-bottom: 5px solid var(--maingrey);
+  /* Makes the width match the content */
+  width: fit-content;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 10px;
+  transition: 0.3s;
+  font-size: 17px;
+  /* Rounded Pill Shaped Buttons */
+  /*border-radius: 16px;
+  margin: 7px 10px;*/
+  /* Make the underlines separate to the main line */
+  margin-bottom: 3px;
+  color: inherit;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  border-bottom: 5px solid var(--lightpurple);
+  transition: 0s;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: 5px solid var(--lightyellow);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ! ------------------- */
+
+/* ! Image Gallery Styling */
+/* ! ------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.gallery_tabcontent {
+  width: 50%;
+}
+
+@media screen and (max-width: 950px) {
+  .gallery_tabcontent {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery_tabcontent {
+    width: 90%;
+  }
+}
+
+.gallery_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ! ------------------- */
+
+/* ! Events Page Styling */
+/* ! ------------------- */
+
+.events_Item {
+  /*float: left;*/
+  width: 100%;
+  height: 250px;
+  transition: all 1s;
+  flex-shrink: 0;
+  justify-content: center;
+  display: flex;
+}
+
+.events_Text {
+  float: left;
+  width: 90%;
+  height: 250px;
+  padding: 20px;
+  opacity: 100%;
+  transition: all 0.5s;
+  background-color: white;
+  overflow: hidden;
+  color: #000000;
+}
+
+@media screen and (max-width: 1000px) {
+  .events_Text {
+    overflow: scroll;
+  }
+}
+
+.events_Block:hover .events_Text {
+  opacity: 100%;
+}
+
+.events_Block:hover .events_Item {
+  width: 30%;
+  height: 250px;
+}
+
+.events_Block {
+  overflow: hidden;
+  width: 100%;
+  display: inline-flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.events_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.events_wrapper {
+  /* width:50%; */
+  width: calc(100vw * 0.6);
+  transition: 0.1s;
+}
+
+@media screen and (max-width: 1000px) {
+  .events_Block:hover .events_Item {
+    width: 25%;
+  }
+
+  .events_wrapper {
+    width: calc(100vw * 0.8);
+    transition: 2s;
+  }
+}
+
+/* ! ------------------- */
+
+/* ! Footer Styling, Positioning and Formatting */
+
+.footer_wrapper {
+  position: relative;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer_container {
+  position: relative;
+  text-align: center;
+  border: 0px;
+  border-top: 5px solid #ccc;
+
+  overflow: hidden;
+  /* Makes the width match the content */
+  width: fit-content;
+}
+
+/* Style the buttons inside the tab */
+.footer button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 10px;
+  padding-top: 0px;
+  transition: 0s;
+  font-size: 17px;
+  /* Rounded Pill Shaped Buttons */
+  /*border-radius: 16px;
+  margin: 7px 10px;*/
+  /* Make the underlines separate to the main line */
+  margin-bottom: 0px;
+  border-bottom: 5px solid rgb(0, 0, 0, 0);
+  color: inherit;
+}
+
+/* Change background color of buttons on hover */
+.footer button:hover {
+  border-bottom: 5px solid var(--lightpurple);
+  transition: 0s;
+}
+
+.footer_title {
+  margin-bottom: 0px;
+  font-family: var(--title_font);
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* ! ------------------- */
+
+/* ! Performance Page Styling */
+/* ! ------------------- */
+
+.p_image {
+  width: 40vw;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .p_image {
+    width: 50vw;
+    /* transition: 0.5s; */
+  }
+}
+
+/* ! ------------------- */
+
+.r_image {
+  width: 70vw;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .r_image {
+    width: 80vw;
+    /* transition: 0.5s; */
+  }
+}
+
+/* ! Toggle Switch Styling for Dark Mode */
+/* ! ------------------- */
+
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider_icon {
+  position: relative;
+  margin-left: 36px;
+  margin-top: 10px;
+  color: white;
+}
+
+.slider_icon_2 {
+  position: absolute;
+  margin-left: -37px;
+  margin-top: 10px;
+  color: black;
+  opacity: 0;
+}
+
+input:checked + .slider_icon_2 {
+  opacity: 1;
+}
+
+input:checked + .slider {
+  background-color: var(--lightpurple);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--lightpurple);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* ! Blog Portfolio Styling */
+/* ! ------------------- */
+
+.blog_row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.blog_row,
+.blog_row > .blog_column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.blog_column {
+  float: left;
+  width: 50%;
+  display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */
+.blog_row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.blog_content {
+  background-color: var(--maingrey);
+  padding: 10px;
+  color: var(--mainblack);
+  
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: var(--maingrey);
+  cursor: pointer;
+  border-bottom: 5px solid #11111100;
+  color: var(--mainblack)
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+  border-bottom: 5px solid var(--lightpurple);
+}
+
+/* Add a dark background color to the active button */
+/*.btn.active {
+  border-bottom: 5px solid var(--lightyellow);
+  color: black;
+}*/
+
+.blog_button {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: var(--mainwhite);
+  cursor: pointer;
+  width:50%;
+  overflow:hidden;
+  border-bottom: 5px solid #11111100;
+}
+
+.blog_button:hover {
+  border-bottom: 5px solid var(--lightpurple);
+}
+
+/* ! Contact Form */
+div.elem-group {
+      margin: 20px 0;
+    }
+
+    div.elem-group.inlined {
+      width: 49%;
+      display: inline-block;
+      float: left;
+      margin-left: 1%;
+    }
+
+    label {
+      display: block;
+      padding-bottom: 10px;
+      font-size: 1.25em;
+    }
+
+    input,
+    select,
+    textarea {
+      border-radius: 2px;
+      border: 2px solid var(--lightpurple);
+      box-sizing: border-box;
+      font-size: 1.25em;
+      width: 100%;
+      padding: 10px;
+    }
+
+    div.elem-group.inlined input {
+      width: 95%;
+      display: inline-block;
+    }
+
+    textarea {
+      height: 250px;
+    }
+
+    hr {
+      border: 1px dotted #ccc;
+    }
+
+    button.booking {
+      /*height: 50px;
+      background: var(--lightpurple);
+      border: none;
+      color: white;
+      font-size: 1.25em;
+      border-radius: 4px;
+      cursor: pointer;*/
+      background-color: rgb(219, 219, 219);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 10px;
+      transition: 0s;
+      font-size: 17px;
+      /* Rounded Pill Shaped Buttons */
+      /*border-radius: 16px;
+      margin: 7px 10px;*/
+      /* Make the underlines separate to the main line */
+      margin-bottom: 5px;
+      color: inherit;
+      border-bottom:5px solid rgb(0, 0, 0, 0);
+        position: relative;
+        border-radius: 10px;
+      
+    }
+
+    button.booking:hover {
+      /*border: 2px solid black;
+      background: var(--lightyellow);*/
+      border-bottom: 5px solid var(--lightpurple);
+      transition: 0s;
+    }
+
+    .centre_button {
+      display: flex;
+  justify-content: center;
+    }
+
+
+
+
+/* ! ------------------- */
+/* ! Video Gallery */
+/* ! ------------------- */
+
+/* The grid: Four equal columns that floats next to each other */
+.column_video {
+  float: left;
+  /* Change width to add more items in a row */
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column_video img {
+  opacity: 0.8;
+  cursor: pointer;
+  width:100%;
+}
+
+.column_video img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row_video:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container_video {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn_video {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+
