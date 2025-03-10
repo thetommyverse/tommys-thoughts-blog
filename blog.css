@@ -67,3 +67,7 @@ footer {
   font-family: 'Courier New', Courier, monospace;
     font-size: 150%;
 }
+
+.blog_text {
+    text-align: left;
+}
