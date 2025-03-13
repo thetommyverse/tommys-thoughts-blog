@@ -21,11 +21,8 @@ body {
     font-size: 18px;
     line-height: 1.42857143;
     color: var(--mainblack);
-    
-    
+
 }
-
-
 
 .page_text_container {
     position: relative;
@@ -61,13 +58,28 @@ footer {
   border-top: var(--maingrey) 5px solid;
 }
 
-/* ! Specific Text Settings */
+/* ! Specific Blog Text Settings */
 
 .text_computer {
-  font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 150%;
 }
 
 .blog_text {
     text-align: left;
 }
+
+
+p {
+    font-family:var(--text_font);
+    font-size:1.2em;
+}
+
+
+a:hover {
+    background-color:var(--mainpurple);
+    color:var(--mainwhite);
+    transition:0.2s;padding:5px 0px;
+}
+
+/* TODO Add styles for text colour - text banner - callouts - quote blocks etc. */

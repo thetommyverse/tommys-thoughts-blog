@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="website_style.css" type="text/css">
+    <link rel="stylesheet" href="/blog.css" type="text/css">
     <style>
         .filterDiv {
             display: none; /* Hidden by default */
@@ -20,13 +20,6 @@
 <body>
 
 <div class="w3-content" style="max-width:1400px">
-    <label class="switch">
-        <input type="checkbox" onClick="toggleDarkMode();" />
-        <span class="slider round">
-            <i class="slider_icon fa-solid fa-moon"></i>
-            <i class="slider_icon_2 fa-solid fa-sun"></i
-            ></span>
-    </label>
 
     <!-- Header -->
     <header class="w3-container w3-center w3-padding-32">
@@ -207,16 +200,6 @@
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
         });
-    }
-
-    // ! Dark Mode Toggle Script
-
-    function toggleDarkMode () {
-        var element = document.body;
-        element.classList.toggle ('dark-mode');
-
-        var tags = document.getElementById("tags")
-        tags.classList.toggle('dark-mode');
     }
 
 </script>
