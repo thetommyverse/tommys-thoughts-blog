@@ -138,7 +138,6 @@ footer {
     align-items: center;
     padding: 20px;
     border-top: 5px solid var(--maingrey);
-    background-color: #f8f9fa; /* Light grey background */
 }
 
 footer p {
@@ -160,6 +159,24 @@ footer button {
 footer button:hover {
     background-color: var(--mainpurple);
     transform: scale(1.05);
+}
+
+/* Read more Button Styling */
+.read {
+    background-color: var(--maingrey);
+    color: var(--mainblack);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read:hover {
+    background-color: var(--mainpurple);
+    transform: scale(1.05);
+    color: var(--mainwhite);
 }
 
 /* ================================ */
@@ -412,6 +429,81 @@ th {
 
 tr:nth-child(even) {
     background-color: #e8e8e8;
+}
+
+/* Modernize the filter bar */
+#tags {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px 0;
+}
+
+/* Header styling */
+#tags h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Style the button container */
+#myBtnContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Base button styles */
+.btn {
+    background: #f5f5f5;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover and active state */
+.btn:hover {
+    background-color: var(--mainpurple);
+    color: var(--mainwhite);
+    transform: scale(1.05);
+}
+
+.btn.active {
+    background: var(--lightpurple);
+    color: white;
+}
+
+.btn.active:hover {
+    background-color: var(--mainpurple);
+    color: var(--mainwhite);
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #myBtnContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#rounded {
+    border-radius: 12px;
+}
+
+#rounded-image {
+    border-radius: 12px 12px 0px 0px;
 }
 
 

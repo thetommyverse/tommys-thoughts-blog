@@ -30,7 +30,6 @@
     <!-- Labels / tags -->
     <div class="w3-card w3-margin" id="tags">
         <div class="w3-container w3-padding">
-            <h4>Filter</h4>
         </div>
         <div class="w3-container">
             <!-- Control buttons -->
@@ -51,8 +50,8 @@
         <!-- LEFT Blog entries -->
         <div class="w3-col l4 s12 filterDiv teaching">
             <!-- Blog entry -->
-            <div class="w3-card-4 w3-margin w3-white" style="max-width: 500px;">
-                <img src="/Cover_Images/TF_logo_ID.avif" alt="Teach First Logo" style="width:100%; transition: width 2s;">
+            <div class="w3-card-4 w3-margin w3-white" id="rounded" style="max-width: 500px;">
+                <img id="rounded-image" src="/Cover_Images/TF_logo_ID.avif" alt="Teach First Logo" style="width:100%; transition: width 2s;">
                 <div class="w3-container">
                     <h3><b>A reflection on 6 months as a Teach First Trainee</b></h3>
                     <h5>Date: <span class="w3-opacity">March 10th 2025</span></h5>
@@ -62,7 +61,7 @@
                     <p class="main-page">A reflection of the joys and challenges of the first six months of being a Teach First Trainee.</p>
                     <div class="w3-row">
                         <div class="w3-col m8 s12">
-                            <p class="main-page"><button class="w3-button w3-padding-large w3-white w3-border" onclick="location.href='tf-reflection.html';"><b>READ MORE »</b></button></p>
+                            <p class="main-page"><button class="read" onclick="location.href='tf-reflection.html';"><b>READ MORE »</b></button></p>
                         </div>
                     </div>
                 </div>
@@ -75,8 +74,8 @@
 
         <!-- RIGHT Blog entries -->
         <div class="w3-col l4 s12 filterDiv">
-            <div class="w3-card-4 w3-margin w3-white" style="max-width: 500px;">
-                <img src="/Cover_Images/the_earth_image.jpeg" alt="The Earth from Space" style="width:100%; transition: width 2s;">
+            <div class="w3-card-4 w3-margin w3-white" id="rounded" style="max-width: 500px;">
+                <img id="rounded-image" src="/Cover_Images/the_earth_image.jpeg" alt="The Earth from Space" style="width:100%; transition: width 2s;">
                 <div class="w3-container">
                     <h3><b>Hello World</b></h3>
                     <h5>Date: <span class="w3-opacity">January 1st 2025</span></h5>
@@ -86,7 +85,7 @@
                     <p class="main-page">Welcome to Tommy's Thoughts. A blog exploring programming, AI, Teaching and other discussions</p>
                     <div class="w3-row">
                         <div class="w3-col m8 s12">
-                            <p class="main-page"><button class="w3-button w3-padding-large w3-white w3-border" onclick="location.href='hello-world.html';"><b>READ MORE »</b></button></p>
+                            <p class="main-page"><button class="read" onclick="location.href='hello-world.html';"><b>READ MORE »</b></button></p>
                         </div>
                     </div>
                 </div>
@@ -98,8 +97,8 @@
         <!-- Introduction menu -->
         <div class="w3-col l4">
             <!-- About Card -->
-            <div class="w3-card w3-margin w3-margin-top" style="max-width: 500px; transition: width 2s;">
-                <img src="/Media/About%20Me%20-%20Profile%20Picture.jpg" style="width:100%">
+            <div class="w3-card w3-margin w3-margin-top" id="rounded" style="max-width: 500px; transition: width 2s;">
+                <img id="rounded-image" src="/Media/About%20Me%20-%20Profile%20Picture.jpg" style="width:100%">
                 <div class="w3-container w3-black">
                     <h4><b>Tommy Hills</b></h4>
                     <p class="main-page">Thoughts, musings, projects and other related materials. Anything and everything can be found here. </p>
@@ -147,8 +146,8 @@
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom" onclick="location.href='https://thetommyverse.com';">Back to main website</button>
+<footer>
+    <button onclick="location.href='https://thetommyverse.com';">Back to main website</button>
 </footer>
 
 </body>
