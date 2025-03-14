@@ -1,6 +1,9 @@
-/* Variables */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap'); /* Variables */
+
+
 :root {
     --text_font: "Roboto", sans-serif;
+    --blog-font: "JetBrains Mono", monospace;
 
     --default-color: #2d2d2d;
     --grey: #9e9e9e;
@@ -24,8 +27,9 @@
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
+
 p {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--blog-font);
 }
 
 footer p {
@@ -101,6 +105,7 @@ footer p {
     padding: 10px 16px;
     background-color: var(--light-grey);
     font-style: italic;
+    font-family: var(--blog-font);
     color: var(--default-color);
 }
 
@@ -210,6 +215,7 @@ pre[class*="language-"] {
 /*        Table Styling             */
 /* ================================= */
 table {
+    font-family: var(--blog-font);
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
@@ -235,6 +241,50 @@ tr:nth-child(even) {
     background-color: #e8e8e8;
 }
 
+/* ================================= */
+/*        Prompts from AI            */
+/* ================================= */
+
+@keyframes swirlGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.ai-prompt {
+    background: linear-gradient(135deg, #1b0f2a, #2b1e3b, #320267, #341e3b);
+    background-size: 300% 300%;
+    animation: swirlGradient 6s infinite linear;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    border-left: 5px solid #b238f8; /* Purple left border */
+    border-right: 5px solid #b238f8; /* Purple right border */
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+    margin: 24px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    position: relative; /* Allows precise positioning of the label */
+}
+
+/* Centered Label with Bottom Purple Border */
+.ai-prompt::before {
+    content: "Prompt";
+    position: absolute;
+    top: -12px; /* Moves it slightly above the box */
+    left: 50%;
+    transform: translateX(-50%); /* Centers it */
+    background: black;
+    color: white;
+    padding: 4px 50px; /* Adds left/right padding */
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px 8px 8px 8px;
+    border-bottom: 3px solid #b238f8; /* Purple border on bottom */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    white-space: nowrap; /* Ensures it doesn’t wrap */
+}
 
 
 
