@@ -536,7 +536,14 @@ figcaption {
     margin-right: auto;
 }
 
-/* Use JavaScript to set figcaption from the alt attribute */
+#link {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+#link:hover {
+    color: var(--mainwhite);
+}
 
 
 
