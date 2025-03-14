@@ -193,7 +193,7 @@ footer button:hover {
 
 p {
     font-family: var(--text_font), serif;
-    font-size: 1.2em;
+    font-size: 150%;
 }
 
 /* ================================ */
@@ -505,6 +505,37 @@ tr:nth-child(even) {
 #rounded-image {
     border-radius: 12px 12px 0px 0px;
 }
+
+/* Ensure the image is responsive */
+figure img {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+    margin-bottom: 10px;
+}
+
+/* Style for figure and caption */
+figure {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 90%; /* Prevents images from being too wide */
+}
+
+figcaption {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+    max-width: 75%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Use JavaScript to set figcaption from the alt attribute */
 
 
 
