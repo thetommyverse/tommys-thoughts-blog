@@ -161,6 +161,21 @@ footer button:hover {
     transform: scale(1.05);
 }
 
+/* Footer Button Styling */
+#exit-button {
+    background-color: var(--lightpurple);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 5px;
+}
+
+#exit-button:hover {
+    background-color: var(--mainpurple);
+    transform: scale(1.05);
+}
+
+
 /* Read more Button Styling */
 .read {
     background-color: var(--maingrey);
