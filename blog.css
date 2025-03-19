@@ -77,6 +77,23 @@ h1:hover::after {
     width: 120px;
 }
 
+/* Underline effect for h2 */
+h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--purple);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hover effect on heading */
+h2:hover::after {
+    width: 120px;
+}
+
 /* Styling for post date */
 .date {
     font-size: 1.3rem;
@@ -210,11 +227,14 @@ footer button:hover {
 p {
     font-family: var(--text_font), serif;
     font-size: 150%;
+    text-align: left;
+
 }
 
 /* ================================ */
 /*      Hyperlink Hover Effect      */
 /* ================================ */
+
 a:hover {
     background-color: var(--mainpurple);
     color: var(--mainwhite);
@@ -271,17 +291,47 @@ footer p {
     -webkit-box-decoration-break: clone;
 }
 
-.highlight-grey { background-color: var(--grey); color: #fff; }
-.highlight-red { background-color: var(--red); color: #fff; }
-.highlight-orange { background-color: var(--orange); color: #fff; }
-.highlight-yellow { background-color: var(--yellow); color: #000; }
-.highlight-green { background-color: var(--green); color: #fff; }
-.highlight-teal { background-color: var(--teal); color: #fff; }
-.highlight-blue { background-color: var(--blue); color: #fff; }
-.highlight-purple { background-color: var(--purple); color: #fff; }
-.highlight-pink { background-color: var(--pink); color: #fff; }
-.highlight-brown { background-color: var(--brown); color: #fff; }
-.highlight-cyan { background-color: var(--cyan); color: #fff; }
+
+/* Default state: Transparent background with black text */
+.highlight-grey { background-color: rgba(158, 158, 158, 0.1); color: #000; }
+.highlight-red { background-color: rgba(235, 87, 87, 0.1); color: #000; }
+.highlight-orange { background-color: rgba(242, 153, 74, 0.1); color: #000; }
+.highlight-yellow { background-color: rgba(242, 201, 76, 0.1); color: #000; }
+.highlight-green { background-color: rgba(39, 174, 96, 0.3); color: #000; }
+.highlight-teal { background-color: rgba(42, 201, 183, 0.1); color: #000; }
+.highlight-blue { background-color: rgba(45, 156, 219, 0.1); color: #000; }
+.highlight-purple { background-color: rgba(155, 81, 224, 0.1); color: #000; }
+.highlight-pink { background-color: rgba(255, 77, 148, 0.1); color: #000; }
+.highlight-brown { background-color: rgba(141, 110, 99, 0.1); color: #000; }
+.highlight-cyan { background-color: rgba(0, 188, 212, 0.1); color: #000; }
+
+/* Smooth transition effect */
+.highlight-grey,
+.highlight-red,
+.highlight-orange,
+.highlight-yellow,
+.highlight-green,
+.highlight-teal,
+.highlight-blue,
+.highlight-purple,
+.highlight-pink,
+.highlight-brown,
+.highlight-cyan {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state: Solid color with white or black text for contrast */
+.highlight-grey:hover { background-color: var(--grey); color: #fff; }
+.highlight-red:hover { background-color: var(--red); color: #fff; }
+.highlight-orange:hover { background-color: var(--orange); color: #fff; }
+.highlight-yellow:hover { background-color: var(--yellow); color: #000; }
+.highlight-green:hover { background-color: var(--green); color: #fff; }
+.highlight-teal:hover { background-color: var(--teal); color: #fff; }
+.highlight-blue:hover { background-color: var(--blue); color: #fff; }
+.highlight-purple:hover { background-color: var(--purple); color: #fff; }
+.highlight-pink:hover { background-color: var(--pink); color: #fff; }
+.highlight-brown:hover { background-color: var(--brown); color: #fff; }
+.highlight-cyan:hover { background-color: var(--cyan); color: #fff; }
 
 /* ================================= */
 /*       Full-Width Banner Style     */
@@ -308,13 +358,43 @@ footer p {
 /* ================================= */
 /*        Quote Block Style          */
 /* ================================= */
+/* Block Quote */
 .quote {
     border-left: 4px solid var(--grey);
     padding: 10px 16px;
     background-color: var(--light-grey);
     font-style: italic;
     color: var(--default-color);
+    font-size: 125% !important;
+    font-family: "Georgia", "Garamond", "Times New Roman", serif; /* More quote-like font */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
+
+.quote:hover {
+    background-color: rgba(158, 158, 158, 0.1); /* Slight grey tint */
+    border-left-color: var(--purple); /* Highlight border */
+    transform: translateX(4px); /* Slight shift for a dynamic effect */
+}
+
+/* Inline Quote */
+.quote-inline {
+    border-left: 2px solid var(--grey); /* Thinner border for inline use */
+    padding-left: 8px; /* Small padding to separate from text */
+    font-style: italic;
+    color: var(--default-color);
+    font-size: 80% !important; /* Slightly larger for emphasis but not overpowering */
+    display: inline; /* Ensures it stays within text flow */
+    background-color: var(--light-grey);
+    font-family: "Georgia", "Garamond", "Times New Roman", serif; /* Matching quote style */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.quote-inline:hover {
+    background-color: rgba(158, 158, 158, 0.3); /* More noticeable highlight */
+    border-left-color: var(--purple); /* Highlight border */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
 
 /* ================================= */
 /*   Prism.js Code Block Styling     */
@@ -336,7 +416,7 @@ pre[class*="language-"] {
     border-radius: 6px;
     border-left: 5px solid;
     margin: 10px 0;
-    font-size: 14px;
+    font-size: 125%;
     background-color: rgba(45, 45, 45, 0.1);
     color: var(--default-color);
     display: flex;
@@ -552,7 +632,7 @@ figcaption {
 }
 
 #link {
-    color: var(--blue);
+    color: var(--purple);
     text-decoration: underline;
 }
 
