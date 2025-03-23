@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="/blog.css" type="text/css">
+    <link rel="stylesheet" href="blog-grid.css" type="text/css">
     <style>
         .filterDiv {
             display: none; /* Hidden by default */
@@ -19,10 +20,10 @@
 </head>
 <body style="margin-top: 15px;">
 
-    <button onclick="location.href='https://thetommyverse.com';" id="exit-button"
-            style="position: absolute; top: 10px; left: 10px; padding: 10px 20px; border: none; border-radius: 100px; cursor: pointer;">
-        Back
-    </button>
+<button onclick="location.href='https://thetommyverse.com';" id="exit-button"
+        style="position: absolute; top: 10px; left: 10px; padding: 10px 20px; border: none; border-radius: 100px; cursor: pointer;">
+    Back
+</button>
 
 <div class="w3-content" style="max-width:1400px">
 
@@ -35,108 +36,101 @@
     </header>
 
     <!-- Labels / tags -->
-    <div class="w3-card w3-margin" id="tags">
+    <div class="w3-container">
+        <div id="myBtnContainer" class="w3-padding">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('programming')"> Programming</button>
+            <button class="btn" onclick="filterSelection('discussion')"> Discussion</button>
+            <button class="btn" onclick="filterSelection('ai')"> Artificial Intelligence</button>
+            <button class="btn" onclick="filterSelection('teaching')"> Teaching</button>
+        </div>
+    </div>
+
+
+    <div class="blog-container">
+        <div class="blog-card filterDiv teaching ai">
+            <img src="/Media/AILA%20Blog%20Post%20-%20Image.png" alt="AI-Generated image and Oak logo">
+            <div class="blog-content blog-text">
+                <h3>I used AILA to create a lesson, and here's what I thought.</h3>
+                <h5>Date: March 24th 2025</h5>
+                <p>I used Oak National Academy's AILA lesson generator to create a revision lesson, and here's what I thought.</p>
+                <button class="read-more" onclick="location.href='aila-review.html';">READ MORE »</button>
+            </div>
+        </div>
+
+        <div class="blog-card filterDiv teaching">
+            <img src="/Media/Resources.jpg" alt="Resources for lesson">
+            <div class="blog-content blog-text">
+                <h3>Unplugged Activities and Logic Gates</h3>
+                <h5>Date: March 14th 2025</h5>
+                <p>I tried something different by using an unplugged activity...</p>
+                <button class="read-more" onclick="location.href='unplugged-activities.html.html';">READ MORE »</button>
+            </div>
+        </div>
+
+        <div class="blog-card filterDiv teaching">
+            <img src="/Cover_Images/TF_logo_ID.avif" alt="Teach First Logo">
+            <div class="blog-content blog-text">
+                <h3>A reflection on the first 6 months as a Teach First Trainee</h3>
+                <h5>Date: March 10th 2025</h5>
+                <p>A reflection on the first six months of Teach First.</p>
+                <button class="read-more" onclick="location.href='tf-reflection.html';">READ MORE »</button>
+            </div>
+        </div>
+
+        <div class="blog-card filterDiv">
+            <img src="/Cover_Images/the_earth_image.jpeg" alt="The Earth from Space">
+            <div class="blog-content blog-text">
+                <h3>Hello, World!</h3>
+                <h5>Date: January 1st 2025</h5>
+                <p>Welcome to Tommy's Thoughts. A blog exploring programming, AI, teaching, and more.</p>
+                <button class="read-more" onclick="location.href='hello-world.html';">READ MORE »</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- END RIGHT BLOG ENTRIES -->
+
+    <!-- Introduction menu -->
+
+    <!-- TODO Highlights to be implemented later -->
+    <!-- Posts -->
+    <!-- <div class="w3-card w3-margin">
         <div class="w3-container w3-padding">
+            <h4>Highlights</h4>
         </div>
-        <div class="w3-container">
-            <!-- Control buttons -->
-            <div id="myBtnContainer" class="w3-padding">
-                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                <button class="btn" onclick="filterSelection('programming')"> Programming</button>
-                <button class="btn" onclick="filterSelection('discussion')"> Discussion</button>
-                <button class="btn" onclick="filterSelection('ai')"> Artificial Intelligence</button>
-                <button class="btn" onclick="filterSelection('teaching')"> Teaching</button>
-            </div>
-        </div>
+        <ul class="w3-ul w3-hoverable w3-white">
+            <li class="w3-padding-16">
+                <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Lorem</span><br>
+                <span>Sed mattis nunc</span>
+            </li>
+            <li class="w3-padding-16">
+                <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Ipsum</span><br>
+                <span>Praes tinci sed</span>
+            </li>
+            <li class="w3-padding-16">
+                <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Dorum</span><br>
+                <span>Ultricies congue</span>
+            </li>
+            <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+                <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Mingsum</span><br>
+                <span>Lorem ipsum dipsum</span>
+            </li>
+        </ul>
     </div>
+    <hr>-->
 
+    <!-- END Introduction Menu -->
 
-    <!-- Grid -->
-    <div class="w3-row">
+    <!-- END GRID -->
+</div><br>
 
-
-        <!-- Main Blog Entries -->
-        <div class="w3-row-padding w3-margin-top">
-            <div class="w3-third w3-margin-bottom filterDiv teaching">
-                <div class="w3-card-4 w3-white" id="rounded">
-                    <img id="rounded-image" src="/Media/Resources.jpg" alt="Resources for lesson" style="width:100%;">
-                    <div class="w3-container">
-                        <h3><b>Unplugged Activities and Logic Gates</b></h3>
-                        <h5>Date: <span class="w3-opacity">March 14th 2025</span></h5>
-                        <p class="main-page" style="font-size:100%;">I tried something different by using an unplugged activity...</p>
-                        <button class="read" onclick="location.href='unplugged-activities.html';"><b>READ MORE »</b></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-third w3-margin-bottom filterDiv teaching">
-                <div class="w3-card-4 w3-white" id="rounded">
-                    <img id="rounded-image" src="/Cover_Images/TF_logo_ID.avif" alt="Teach First Logo" style="width:100%;">
-                    <div class="w3-container">
-                        <h3><b>A reflection on the first 6 months as a Teach First Trainee</b></h3>
-                        <h5>Date: <span class="w3-opacity">March 10th 2025</span></h5>
-                        <p class="main-page" style="font-size:100%;">A reflection on the first six months of Teach First.</p>
-                        <button class="read" onclick="location.href='tf-reflection.html';"><b>READ MORE »</b></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-third w3-margin-bottom filterDiv">
-                <div class="w3-card-4 w3-white" id="rounded">
-                    <img id="rounded-image" src="/Cover_Images/the_earth_image.jpeg" alt="The Earth from Space" style="width:100%;">
-                    <div class="w3-container">
-                        <h3><b>Hello, World!</b></h3>
-                        <h5>Date: <span class="w3-opacity">January 1st 2025</span></h5>
-                        <p class="main-page" style="font-size:100%;">Welcome to Tommy's Thoughts. A blog exploring programming, AI, teaching, and more.</p>
-                        <button class="read" onclick="location.href='hello-world.html';"><b>READ MORE »</b></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-        <!-- END RIGHT BLOG ENTRIES -->
-
-        <!-- Introduction menu -->
-
-            <!-- TODO Highlights to be implemented later -->
-            <!-- Posts -->
-            <!-- <div class="w3-card w3-margin">
-                <div class="w3-container w3-padding">
-                    <h4>Highlights</h4>
-                </div>
-                <ul class="w3-ul w3-hoverable w3-white">
-                    <li class="w3-padding-16">
-                        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Lorem</span><br>
-                        <span>Sed mattis nunc</span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Ipsum</span><br>
-                        <span>Praes tinci sed</span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Dorum</span><br>
-                        <span>Ultricies congue</span>
-                    </li>
-                    <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-                        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Mingsum</span><br>
-                        <span>Lorem ipsum dipsum</span>
-                    </li>
-                </ul>
-            </div>
-            <hr>-->
-
-            <!-- END Introduction Menu -->
-
-        <!-- END GRID -->
-    </div><br>
-
-    <!-- END w3-content -->
+<!-- END w3-content -->
 </div>
 
 <!-- Footer -->
@@ -156,53 +150,27 @@
 </body>
 
 <script>
-    filterSelection("all")
     function filterSelection(c) {
         var x, i;
         x = document.getElementsByClassName("filterDiv");
         if (c == "all") c = "";
-        // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
         for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            x[i].classList.remove("show");
+            if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
         }
     }
 
-    // Show filtered elements
-    function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) {
-                element.className += " " + arr2[i];
-            }
+    document.addEventListener("DOMContentLoaded", function() {
+        filterSelection("all");
+        var btns = document.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) current[0].classList.remove("active");
+                this.classList.add("active");
+            });
         }
-    }
-
-    // Hide elements that are not selected
-    function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-                arr1.splice(arr1.indexOf(arr2[i]), 1);
-            }
-        }
-        element.className = arr1.join(" ");
-    }
-
-    // Add active class to the current control button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
-    var btns = btnContainer.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-    }
+    });
 
 </script>
 </html>
