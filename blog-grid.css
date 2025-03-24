@@ -31,17 +31,17 @@
     padding: 15px;
 }
 
-.blog-text {
+.blog-text2 {
     font-family: Arial, sans-serif;
 }
 
 .blog-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.blog-content h5 {
-    font-size: 0.9rem;
+.blog-content h4 {
+    font-size: 1.2rem;
     color: gray;
     margin-bottom: 10px;
 }
@@ -69,7 +69,17 @@
     color: var(--mainwhite);
 }
 
+#myBtnContainer button {
+    background-color: var(--maingrey);
+}
 
+#myBtnContainer .active {
+    background-color: var(--lightpurple);
+}
+
+#myBtnContainer button:hover {
+    background-color: var(--lightpurple);
+}
 
 .filterDiv {
     display: none;
