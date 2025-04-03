@@ -687,6 +687,26 @@ figcaption {
     white-space: nowrap; /* Ensures it doesn’t wrap */
 }
 
+/* Extra styling for alternate button */
+
+#alternate_button {
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color:var(--lightyellow);
+    color:black;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 790px) {
+    #alternate_button {
+        margin-left: 0px;
+    }
+}
+
+#alternate_button:hover {
+    background-color: var(--yellowalt);
+}
+
 
 
 
