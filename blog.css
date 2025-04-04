@@ -689,24 +689,51 @@ figcaption {
 
 /* Extra styling for alternate button */
 
-#alternate_button {
-    margin-left: 10px;
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-top: 10px;
-    background-color:var(--lightyellow);
-    color:black;
-    margin-bottom: 15px;
 }
 
-@media (max-width: 790px) {
-    #alternate_button {
-        margin-left: 0px;
-    }
+.footer-button {
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    height: 100%; /* Ensures equal height */
+    box-sizing: border-box;
+    background-color: var(--primary-color, #eee); /* fallback if --primary-color is not set */
+    color: black;
 }
 
-#alternate_button:hover {
+.yellow-button {
+    background-color: var(--lightyellow);
+}
+
+.purple-button {
+    background-color: var(--lightpurple);
+    color:white;
+}
+
+.yellow-button:hover {
     background-color: var(--yellowalt);
 }
 
+/* Responsive layout: stack buttons vertically on smaller screens */
+@media (max-width: 806px) {
+    .button-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
 
 
 
