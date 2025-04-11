@@ -735,4 +735,12 @@ figcaption {
     }
 }
 
-ul 
+ul li {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150%;
+    text-align: left;
+}
+
+
+
+
