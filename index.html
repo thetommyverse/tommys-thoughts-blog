@@ -107,6 +107,16 @@
     <!-- Blog Posts -->
     <div class="blog-container">
         <div class="blog-card filterDiv teaching ai">
+            <img src="/Media/ChatGPT-Action-Figure-Generations.png" alt="Action Figure Generations from ChatGPT">
+            <div class="blog-content blog-text2">
+                <h3>I created this ‘Action Figure’ trend, and I have some thoughts.</h3>
+                <h4>Date: April 11th 2025</h4>
+                <p style="font-family:Arial;">I tried out the action figure trend using OpenAI's new image generation and have summarised my thoughts.</p>
+                <button class="read-more" onclick="location.href='action-figure-trend.html';">READ MORE »</button>
+            </div>
+        </div>
+
+        <div class="blog-card filterDiv teaching ai">
             <img src="https://i.imgur.com/nYJaOKp.png" alt="AI-Generated image and Oak logo">
             <div class="blog-content blog-text2">
                 <h3>I used AILA to create a lesson, and here's what I thought.</h3>
@@ -214,23 +224,4 @@
         var x, i;
         x = document.getElementsByClassName("filterDiv");
         if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-            x[i].classList.remove("show");
-            if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        filterSelection("all");
-        var btns = document.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-                if (current.length > 0) current[0].classList.remove("active");
-                this.classList.add("active");
-            });
-        }
-    });
-
-</script>
-</html>
+        for (i = 0; i < x
