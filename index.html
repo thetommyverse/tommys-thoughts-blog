@@ -252,4 +252,62 @@
                 <span>Ultricies congue</span>
             </li>
             <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-                <img src="/w3images/rock.jpg" alt="Imag
+                <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Mingsum</span><br>
+                <span>Lorem ipsum dipsum</span>
+            </li>
+        </ul>
+    </div>
+    <hr>-->
+
+    <!-- END Introduction Menu -->
+
+    <!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<footer>
+    <div class="about-card">
+        <img src="/Media/About%20Me%20-%20Profile%20Picture.jpg" alt="Tommy Hills">
+        <div class="about-text">
+            <h3 style="font-size:200%;">Tommy Hills</h3>
+            <h5>Thoughts, musings, projects, and other related materials. Anything and everything can be found here.</h5>
+            <br>
+            <div class="button-group">
+                <button class="footer-button purple-button" onclick="location.href='https://thetommyverse.com';">Find out more on website</button>
+                <button class="footer-button yellow-button" onclick="location.href='https://thetommyverse.notion.site/get-in-touch?pvs=74';">Get in touch!</button>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+
+<script>
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            x[i].classList.remove("show");
+            if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        filterSelection("all");
+        var btns = document.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) current[0].classList.remove("active");
+                this.classList.add("active");
+            });
+        }
+    });
+
+</script>
+</html>
