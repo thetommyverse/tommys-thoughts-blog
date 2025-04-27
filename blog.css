@@ -640,6 +640,16 @@ figcaption {
     color: var(--mainwhite);
 }
 
+#link-alt {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+#link-alt:hover {
+    color: var(--mainwhite);
+    background-color: var(--blue);
+}
+
 /* ================================= */
 /*        Prompts from AI            */
 /* ================================= */
