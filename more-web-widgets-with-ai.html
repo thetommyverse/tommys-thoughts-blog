@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>I built more vital tools using AI.</title>
+  <link rel="stylesheet" href="blog.css"/>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <style>
+    ul {
+      font-family: "Courier New", Courier, monospace !important;
+      text-align: left !important;
+
+    }
+    li {
+      font-family: "Courier New", Courier, monospace !important;
+      text-align: left !important;
+
+    }
+
+    .fancy-reply-card {
+      margin-top: -50px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      background: #ffffff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      font-family: "Raleway", sans-serif;
+      overflow: hidden;
+      transition: max-height 3s ease, box-shadow 3s ease;
+      max-height: 300px;
+      cursor: pointer;
+      position: relative;
+      font-size: 10px;
+    }
+
+    .fancy-reply-card.expanded {
+      max-height: 2000px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+
+    .reply-card-top {
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* Default thumbnail size */
+    .reply-thumbnail {
+      width: 200px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+
+    /* Full stacking layout for small mobile screens */
+    @media (max-width: 700px) {
+      .reply-card-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .fancy-reply-card {
+        transition: max-height 3s ease, box-shadow 3s ease;
+      }
+
+      .reply-thumbnail {
+        width: 70%;
+        height: auto;
+        transition: width 2s;
+      }
+
+      .reply-top-right {
+        margin-top: 15px;
+        text-align: left;
+      }
+    }
+
+    .reply-top-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .reply-title {
+      color: #6a1b9a;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .reply-date {
+      color: #666;
+      margin: 4px 0 12px 0;
+      text-align: center;
+    }
+
+    .reply-preview-text-wrapper {
+      position: relative;
+      max-height: 100px;
+      overflow: hidden;
+    }
+
+
+
+    .fancy-reply-card.expanded .reply-preview-text-wrapper {
+      max-height: none;
+    }
+
+    .reply-preview-text {
+      margin-bottom: 0;
+    }
+
+    .fadeout-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.9), #fff);
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      z-index: 2;
+    }
+
+    .fancy-reply-card.expanded .fadeout-overlay {
+      opacity: 0;
+    }
+
+    .reply-full-content {
+      padding: 0 20px 20px 20px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease, opacity 0.4s ease;
+    }
+
+    .fancy-reply-card.expanded .reply-full-content {
+      opacity: 1;
+      max-height: 2000px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      .reply-card-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+
+      .reply-top-right {
+        margin-top: 15px;
+        text-align: left;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="page_text_container">
+  <div class="page_content">
+
+    <h1><b>I built more vital tools using AI.</b></h1>
+    <h3 class="date">Wednesday 28th May 2025</h3>
+    <br> <br>
+    <hr>
+
+    <div class="fancy-reply-card" onclick="toggleReplyPreview(this)">
+      <div class="reply-card-top">
+        <img src="/Media/AI%20Widgets%20Blog%20Post%20Background.png" alt="Preview image for previous post" class="reply-thumbnail" />
+        <div class="reply-top-right">
+          <h3 class="reply-title">↪ Replying to: <a href="web-widgets-with-ai.html">“I used AI to build vital tools for teaching.”</a></h3>
+          <p class="reply-date">Sunday 27th April 2025</p>
+          <div class="reply-preview-text-wrapper">
+            <p class="reply-preview-text">
+              From binary games to packet simulators, I've discussed how I have used AI to build vital tools for teaching. The journey started with Claude, then tried ChatGPT’s Canvas, and now I use Canva’s AI tools.
+            </p>
+            <div class="fadeout-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reply-full-content">
+        <h4>Introduction</h4>
+
+        <p>During our first Teach First in-person training day, we were given a talk from <a id="link" href="https://www.linkedin.com/in/becci-peters/">Becci Peters</a> about a unique use of LLM models, specifically <a id="link" href="http://Claude.ai">Claude.ai</a>. This use was creating generated artefacts, react-based webpages that can be shared with the public via a URL. During the training day we were encouraged to build a tool for teaching, and I built a small binary number converter widget.</p>
+
+        <p>Although only given 10 minutes or so to write a prompt and generate a widget, I could already see the potential, combining this feature with my own experience of prompt engineering. All I needed was a useful application for this tool in the classroom, and at the end of Term 1, an opportunity presented itself.</p>
+
+        <h4>Claude AI Artefacts</h4>
+
+        <p>I used these technology to build a searching and sorting algorithms visualiser for use with my Year 11 pupils. The wonderful features of this widget is being able to pick which sort or sort, enter or generate a dataset and then see the algorithm in action. These provided a wonderful demonstration of these algorithms for the pupils to watch and engage with.</p>
+
+        <p>However, I saw potential. I have found that pupils sometimes struggle with the tag-based structure of HTML programming. I needed a simpler interface for pupils to program in HTML. I looked at programs like <a id="link" href="https://scratch.mit.edu/">Scratch</a> and <a id="link" href="https://trinket.io/">Trinket.io</a> that provide block-based programming. I therefore used Claude to build a drag-and-drop <a id="link-alt" href="https://claude.site/artifacts/50af64df-cbd3-4b56-9e64-0b2e5ad7b3b7">‘code editor’</a> for HTML. Pupils can drag the blocks together to build their websites, add images by dragging an image onto the screen and even apply CSS styling via a list on the side of the page. This was the pot realised although there were so problems faced.</p>
+
+        <p>The main problem faced was with the context-length in generations. Claude had a limit on the amount of content (code) the LLM chatbot can generate, and sometimes the code would stop in the middle of the code or not let me prompt the chat any further.</p>
+
+        <p>The solution to this was to create new versions of the tool, with my changes and additions added to the prompt. In other words, regenerate the tool with the changes in a new chat window. This worked but felt incredibly clunky to use and made tweaking and refining the tool quite challenging.</p>
+
+        <h4>ChatGPT Canvas</h4>
+
+        <p>This process soon became available for <a id="link" href="https://chatgpt.com/">ChatGPT</a> through their Canvas feature. This worked a lot better for creating a back-and-forth prompting process and meant I could guide the tool creation much more successfully. I used this to build <a id="link-alt" href="https://chatgpt.com/canvas/shared/67dbc92a8de0819186dc5e914ba90fac">‘The Binary Game’</a>; a worksheet I had designed that I instead gamified into a web widget that the pupils could play. This was a fantastic little creation and the pupils responded really well to it.</p>
+
+        <h4>Canva Code</h4>
+
+        <p>This changed everything!</p>
+
+        <p>Most recently <a id="link" href="https://www.canva.com/">Canva</a> brought out a feature in their Canva Create event called “Canva Code”, where uses can ask Canva to create a webpage / web widget and then it can be used in a design and published to a webpage. Immediately after trying it, the widgets I was able to create were vastly superior to ChatGPT’s Canvas or Claude’s Artefacts. These apps were built using Tailwind for styling, and could create animations, intractable elements and so much more. I’ve been creating tools ever since, with this as my go-to creator, instead of Claude or ChatGPT.</p>
+
+        <p>So far these have included a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/-packet-switching-simulator-v3">‘Packet Switching Simulator’</a>, an improved version of my <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/searching-and-sorting-algorithms-visualiser-version-2">‘Searching and Sorting Algorithm Visualiser’</a> and an <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/website-interactive-demo">‘interactive web design demo’</a>. I’ve put the ‘Packet Switching Simulator’ into my lesson when teaching networks to Year 7 pupils, and they loved it. It’s already on version 3, as I’ve kept thinking of changes and improvements to make to it. Also with this network’s topic, I built a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/network-bandwidth-simulator">‘Network Bandwidth Simulator'</a> to show more devices and data affect the speed of the network.</p>
+
+        <p>So far I have not noticed a context or generation limit and have been able to generate apps with upwards of 1200 lines of code. There’s also been no limit to the number of prompts I have been able to send, with upwards of 12 back and forths for my ‘interactive web design demo’ app.</p>
+
+        <h4>Conclusion</h4>
+
+        <p>This is the best use of AI models in teaching, in my opinion. Taking an idea we have and want to show to our pupils, and making it a reality, quickly and easily. To build this ourselves would take far too long, alongside the normal teacher workload, so this speeds up creating more interactive and engaging lessons. I cannot wait to try this more and take it even further.</p>
+      </div>
+    </div>
+
+    <p>
+    Since my last post about using AI to build interactive webpages to help teaching, I've experimented with creating even more resources that I wish to detail here for your own use. These were built using Canva Code, by far the best solution for creating these interactive pages, at present.
+    </p>
+
+    <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/interactive-network-building">Networks (Topology) Builder - Game</a></h3>
+    <p>A game that invites users to connect components together to create different networks. The later levels focus on Network Topologies such as Star, Bus, Ring, etc.). A great visual tool for understanding how networks can be arranged.</p>
+
+    <figure>
+      <img src="/Media/More-Web-Widgets-Screenshots/Networks Builder.webp" alt="Screenshot of Networks (Topology) Builder Game" id="styledImage">
+      <figcaption id="imageCaption"></figcaption>
+    </figure>
+    <br>
+
+    <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/revision-minesweeper">Computer Science (OCR) Revision Minesweeper - Game</a></h3>
+    <p>For the pupils who enjoy playing games, this game features OCR multiple choice questions built into the traditional game of minesweeper. Questions are asked for each square revealed and as a 'save yourself from losing' last chance.</p>
+
+    <figure>
+      <img src="/Media/More-Web-Widgets-Screenshots/Minesweeper.webp" alt="Screenshot of Computer Science Revision Minesweeper Game" id="styledImage2">
+      <figcaption id="imageCaption2"></figcaption>
+    </figure>
+    <br>
+
+    <h3 class="text-blue">HTML Drag-and-Drop Block-Based Editor - Version 2</h3>
+    (<a id="link-alt" class="highlight highlight-cyan" href="https://lga-resources.my.canva.site/html-with-blocks">original</a> / <a id="link-alt" class="highlight highlight-cyan" href="https://lga-resources.my.canva.site/drag-and-drop-html-code-editor">alternative</a>)
+    <p>The same tool (a drag-and-drop editor for HTML) in two different versions. When building this refined version of my earlier Claude widget, I tried two different approaches that led to different user interfaces of the same toolset.</p>
+
+    <figure>
+      <img src="/Media/More-Web-Widgets-Screenshots/HTML_2.webp" alt="Screenshot of (Orginal) HTML Drag-and-Drop Block-Based Editor" id="styledImage3">
+      <figcaption id="imageCaption3"></figcaption>
+    </figure>
+
+    <figure>
+      <img src="/Media/More-Web-Widgets-Screenshots/HTML_1.webp" alt="Screenshot of (Alternative) HTML Drag-and-Drop Block-Based Editor" id="styledImage4">
+      <figcaption id="imageCaption4"></figcaption>
+    </figure>
+    <br>
+
+    <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/cipher-visualiser">Ciphers (Encryption/Decryption) Visualiser</a></h3>
+    <p>A helpful webpage for encrypting and decrypting messages to teach pupils about ciphers and network security encryption. The Caesar Cipher is the main focus with other more complex ciphers also available.</p>
+
+    <figure>
+      <img src="/Media/More-Web-Widgets-Screenshots/Encryption.webp" alt="Screenshot of Encryption/Decryption Visualiser" id="styledImage5">
+      <figcaption id="imageCaption5"></figcaption>
+    </figure>
+    <br>
+
+    <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/number-system-converter">Number System Explorer</a></h3>
+    <p>Calling back to my first test on that Teach First Training Day, this is a more refined converter between different number systems, including binary, hexadecimal, octal, and Base64. This fits well into a lesson / unit on data representation. The Base64 representation can be compared to YouTube url's (video IDs).</p>
+
+    <figure>
+      <img src="/Media/More-Web-Widgets-Screenshots/Data_Representation.webp" alt="Screenshot of Number Systems Explorer" id="styledImage6">
+      <figcaption id="imageCaption6"></figcaption>
+    </figure>
+    <br>
+
+    <h2>Final Comments</h2>
+    <p>
+    I've learnt even more about developing these interactive webpages using Canva Code. Feel free to use and experiment with these tools (or similar) and please share your own experiences with me.</p>
+    <p>I have now begun looking at how this can be used by other subjects outside of Computing / Computing Science. I've already tried some widgets Science, Mathematics and English that perhaps I will write about sometime soon. Needless to say, there is definitely more experimentation to be done.
+    </p>
+
+    <p>A webpage containing all my resources can be found at <a id="link-alt" class="highlight highlight-blue" href="http://resources.thetommyverse.com">resources.thetommyverse.com</a></p>
+
+    <footer>
+      <p>
+        <button onclick="location.href='https://tommysthoughts.thetommyverse.com';">Back to blog</button>
+      </p>
+    </footer>
+  </div>
+</div>
+</body>
+
+<script>
+  function toggleReplyPreview(card) {
+    card.classList.toggle('expanded');
+  }
+
+    // Automatically set figcaption from the alt attribute
+    document.getElementById('imageCaption').innerText = document.getElementById('styledImage').alt;
+    document.getElementById('imageCaption2').innerText = document.getElementById('styledImage2').alt;
+  document.getElementById('imageCaption3').innerText = document.getElementById('styledImage3').alt;
+  document.getElementById('imageCaption4').innerText = document.getElementById('styledImage4').alt;
+  document.getElementById('imageCaption5').innerText = document.getElementById('styledImage5').alt;
+  document.getElementById('imageCaption6').innerText = document.getElementById('styledImage6').alt;
+</script>
+
+</html>
