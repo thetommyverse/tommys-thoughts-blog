@@ -135,6 +135,89 @@
                 transform: translate(-50%, 0);
             }
         }
+
+
+        #filterSearchContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        #myBtnContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #searchBar {
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--maingrey);
+            background-color: #fff;
+            color: var(--mainblack);
+            font-size: 1rem;
+            flex-grow: 1;
+            max-width: 400px;
+            min-width: 200px;
+            margin-left: auto; /* aligns to the right on larger screens */
+        }
+
+        @media (max-width: 900px) {
+            #filterSearchContainer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #myBtnContainer {
+                justify-content: center;
+            }
+
+            #searchBar {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        #myBtnContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #myBtnContainer .btn {
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #myBtnContainer .btn:hover {
+            transform: scale(1.05);
+        }
+
+        #myBtnContainer .btn.active {
+        }
+
+        /* 🔽 Responsive layout for smaller screens */
+        @media (max-width: 700px) {
+            #myBtnContainer {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+            }
+
+            #myBtnContainer .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body style="margin-top: 15px;">
@@ -159,14 +242,16 @@
 
     </header>
 
-    <!-- Filter -->
     <div class="w3-container">
-        <div id="myBtnContainer" class="w3-padding">
-            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn" onclick="filterSelection('programming')"> Programming</button>
-            <button class="btn" onclick="filterSelection('discussion')"> Discussion</button>
-            <button class="btn" onclick="filterSelection('ai')"> Artificial Intelligence</button>
-            <button class="btn" onclick="filterSelection('teaching')"> Teaching</button>
+        <div id="filterSearchContainer">
+            <div id="myBtnContainer">
+                <button class="btn active" onclick="applyFilters('all')">Show all</button>
+                <button class="btn" onclick="applyFilters('programming')">Programming</button>
+                <button class="btn" onclick="applyFilters('discussion')">Discussion</button>
+                <button class="btn" onclick="applyFilters('ai')">Artificial Intelligence</button>
+                <button class="btn" onclick="applyFilters('teaching')">Teaching</button>
+            </div>
+            <input type="text" id="searchBar" placeholder="Search blog titles..." onkeyup="applyFilters()" />
         </div>
     </div>
 
@@ -307,26 +392,40 @@
 </body>
 
 <script>
-    function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("filterDiv");
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-            x[i].classList.remove("show");
-            if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
+    let currentCategory = "all";
+
+    function applyFilters(categoryClicked = null) {
+        if (categoryClicked !== null) {
+            currentCategory = categoryClicked;
+            const active = document.querySelector("#myBtnContainer .active");
+            if (active) active.classList.remove("active");
+            const btns = document.querySelectorAll("#myBtnContainer .btn");
+            btns.forEach(btn => {
+                if (btn.textContent.toLowerCase().includes(categoryClicked)) {
+                    btn.classList.add("active");
+                }
+            });
+        }
+
+        const input = document.getElementById("searchBar").value.toLowerCase();
+        const cards = document.getElementsByClassName("blog-card");
+
+        for (let i = 0; i < cards.length; i++) {
+            const card = cards[i];
+            const title = card.querySelector("h3").textContent.toLowerCase();
+            const matchesSearch = title.includes(input);
+            const matchesCategory = currentCategory === "all" || card.classList.contains(currentCategory);
+
+            if (matchesSearch && matchesCategory) {
+                card.classList.add("show");
+            } else {
+                card.classList.remove("show");
+            }
         }
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        filterSelection("all");
-        var btns = document.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-                if (current.length > 0) current[0].classList.remove("active");
-                this.classList.add("active");
-            });
-        }
+    document.addEventListener("DOMContentLoaded", () => {
+        applyFilters("all");
     });
 
 </script>

@@ -8,6 +8,15 @@
 }
 
 .blog-card {
+    flex-direction: column;
+}
+
+.blog-card img {
+    object-fit: cover;
+    height: 250px; /* consistent height */
+}
+
+.blog-card {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -22,7 +31,6 @@
 
 .blog-card img {
     width: 100%;
-    height: auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
