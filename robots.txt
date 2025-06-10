@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tommysthoughts.thetommyverse.com/sitemap.xml
