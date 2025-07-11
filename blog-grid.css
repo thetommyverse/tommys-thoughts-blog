@@ -78,15 +78,19 @@
 }
 
 #myBtnContainer button {
-    background-color: var(--maingrey);
+    color: white;
+}
+
+#myBtnContainer button {
+    background-color: var(--lightpurple);
 }
 
 #myBtnContainer .active {
-    background-color: var(--lightpurple);
+    background-color: var(--mainpurple);
 }
 
 #myBtnContainer button:hover {
-    background-color: var(--lightpurple);
+    background-color: var(--mainpurple);
 }
 
 .filterDiv {

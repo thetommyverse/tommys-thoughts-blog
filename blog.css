@@ -553,7 +553,7 @@ tr:nth-child(even) {
 
 /* Base button styles */
 .btn {
-    background: #f5f5f5;
+    background: var(--lightpurple); !important;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -565,18 +565,18 @@ tr:nth-child(even) {
 
 /* Hover and active state */
 .btn:hover {
-    background-color: var(--mainpurple);
+    background-color: var(--mainpurple); !important;
     color: var(--mainwhite);
     transform: scale(1.05);
 }
 
 .btn.active {
-    background: var(--lightpurple);
+    background: var(--mainpurple); !important;
     color: white;
 }
 
 .btn.active:hover {
-    background-color: var(--mainpurple);
+    background-color: var(--mainpurple); !important;
     color: var(--mainwhite);
     transform: scale(1.05);
 }
