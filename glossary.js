@@ -23,16 +23,35 @@ style.textContent = `
 
   .glossary-popup {
     position: absolute;
-    background: #fff;
+    background: #ffffff;
     color: #222;
-    border: 1px solid #aaa;
-    border-radius: 6px;
-    padding: 10px;
-    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 16px;
+    max-width: 320px;
     z-index: 9999;
-    font-size: 0.9em;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-size: 0.95em;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    line-height: 1.5;
     display: none;
+    animation: fadeIn 0.2s ease-out;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .glossary-popup::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+    filter: drop-shadow(0 -1px 1px rgba(0,0,0,0.1));
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 `;
 document.head.appendChild(style);
