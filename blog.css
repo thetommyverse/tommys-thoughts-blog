@@ -751,6 +751,12 @@ ul li {
     text-align: left;
 }
 
+ol li {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150%;
+    text-align: left;
+}
+
 
 
 
