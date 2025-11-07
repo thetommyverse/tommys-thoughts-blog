@@ -165,16 +165,17 @@
         #filterSearchContainer {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             align-items: center;
             gap: 15px;
             margin-bottom: 20px;
+            flex-direction: column; /* ADD THIS LINE */
         }
 
         #myBtnContainer {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            justify-content: center; /* ADD THIS LINE */
         }
 
         #searchBar {
@@ -184,34 +185,12 @@
             background-color: #fff;
             color: var(--mainblack);
             font-size: 1rem;
-            flex-grow: 1;
-            max-width: 400px;
             min-width: 200px;
-            margin-left: auto; /* aligns to the right on larger screens */
+            margin: 0 auto;     /* ADD THIS LINE */
+            width: 100%;         /* ADD THIS LINE */
+            max-width: 500px;    /* ADD THIS LINE */
         }
 
-        @media (max-width: 900px) {
-            #filterSearchContainer {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            #myBtnContainer {
-                justify-content: center;
-            }
-
-            #searchBar {
-                width: 100%;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-        }
-
-        #myBtnContainer {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
 
         #myBtnContainer .btn {
             border: none;
@@ -243,6 +222,129 @@
                 text-align: center;
             }
         }
+
+
+        /* Styles for the sidebar of updates */
+        /* 1. The Flexbox Container */
+        .w3-content > .homepage-layout {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+        }
+
+        /* 2. The Main Content Column */
+        /* We set this to take up 3 parts of the space */
+        .homepage-layout > .blog-feed {
+            flex: 3;
+            /* This is a magic fix for flex items that won't shrink */
+            min-width: 0;
+        }
+
+        /* 3. The Sidebar Column */
+        /* We set this to take up 1 part of the space */
+        .homepage-layout > .updates-feed {
+            flex: 1;
+            min-width: 0;
+        }
+
+
+        /* 4. The Responsive Stacking */
+        @media (max-width: 700px) {
+            .w3-content > .homepage-layout {
+                /* On small screens, stack them vertically */
+                flex-direction: column;
+            }
+        }
+
+        .updates-feed h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        /* 2. New Update Card Style */
+        .update-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .update-card h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin: 0 0 4px 0;
+            text-align: center;
+        }
+
+        .update-card .date {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        /* 3. Expandable Content */
+        .update-content {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 60%; /* Matches your blog <p> style */
+            max-height: 100px; /* This hides the overflow */
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.4s ease-out;
+        }
+
+        /* This class is added by JS */
+        .update-content.expanded {
+            max-height: 5000px; /* Increased height for very long posts */
+        }
+
+        .expand-btn {
+            background: none;
+            border: none;
+            color: var(--mainpurple);
+            font-weight: bold;
+            cursor: pointer;
+            padding: 4px 0;
+            margin-top: 10px;
+        }
+
+        .expand-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* 4. Mobile Stacking (Q4) */
+        @media (max-width: 900px) {
+            .homepage-layout {
+                grid-template-columns: 1fr; /* Stacks to a single column */
+            }
+
+            .updates-feed {
+                margin-top: 40px; /* Add space when it stacks */
+            }
+        }
+
+        /* Style for the 'Show more updates' button */
+        .show-more-btn {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: var(--mainpurple); /* Uses your existing purple */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .show-more-btn:hover {
+            background-color: var(--lightpurple); /* Uses your existing light purple */
+        }
     </style>
 </head>
 <body style="margin-top: 15px;">
@@ -261,6 +363,9 @@
 
 
     </header>
+
+    <div class="homepage-layout">
+        <main class = "blog-feed">
 
     <div class="w3-container">
         <div id="filterSearchContainer">
@@ -420,7 +525,14 @@
     <!-- END Introduction Menu -->
 
     <!-- END GRID -->
-</div><br>
+</main><br>
+
+    <aside class="updates-feed">
+        <h2 style="text-align: center;">Updates</h2>
+        <div id="updates-container">
+
+        </div>
+    </aside>
 
 <!-- END w3-content -->
 </div>
@@ -441,6 +553,8 @@
     </div>
 
 </footer>
+
+<script src="updates.json"></script>
 
 </body>
 
@@ -479,6 +593,98 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         applyFilters("all");
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("updates-container");
+        const UPDATES_TO_SHOW = 5; // The number of updates to show initially
+
+        // 1. Use event delegation for all clicks in the container
+        // This handles both "Read more" (expand) and "Show more" (load)
+        container.addEventListener("click", function(e) {
+            // Logic for expanding/collapsing content
+            if (e.target.classList.contains("expand-btn")) {
+                const content = e.target.previousElementSibling;
+                if (content && content.classList.contains("update-content")) {
+                    content.classList.toggle("expanded");
+                    e.target.textContent = content.classList.contains("expanded") ? "Read less" : "Read more";
+                }
+            }
+
+            // Logic for "Show more updates" button
+            if (e.target.classList.contains("show-more-btn")) {
+                const button = e.target;
+                // Get the remaining updates, which we stored on the button
+                const remainingUpdates = JSON.parse(button.dataset.remaining);
+
+                // Render the remaining updates
+                remainingUpdates.forEach(update => {
+                    renderUpdate(update);
+                });
+
+                // Remove the button
+                container.removeChild(button);
+            }
+        });
+
+        // 2. Fetch all updates from the JSON file
+        fetch("updates.json")
+            .then(response => response.json())
+            .then(allUpdates => {
+                // 3. Render the initial batch of updates
+                const initialUpdates = allUpdates.slice(0, UPDATES_TO_SHOW);
+                initialUpdates.forEach(update => {
+                    renderUpdate(update);
+                });
+
+                // 4. Check if a 'Show more' button is needed
+                if (allUpdates.length > UPDATES_TO_SHOW) {
+                    // Get the updates that are left
+                    const remainingUpdates = allUpdates.slice(UPDATES_TO_SHOW);
+
+                    // Create the button
+                    const showMoreBtn = document.createElement("button");
+                    showMoreBtn.className = "show-more-btn";
+                    showMoreBtn.textContent = `Show ${remainingUpdates.length} more`;
+
+                    // Store the remaining updates on the button's data attribute
+                    showMoreBtn.dataset.remaining = JSON.stringify(remainingUpdates);
+
+                    // Add the button to the end of the container
+                    container.appendChild(showMoreBtn);
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching updates:", error);
+                container.innerHTML = "<p>Could not load updates.</p>";
+            });
+
+        // 5. Helper function to create and add an update card
+        function renderUpdate(update) {
+            const card = document.createElement("div");
+            card.className = "update-card";
+
+            // Check if the "show more" button exists
+            const showMoreBtn = container.querySelector('.show-more-btn');
+
+            card.innerHTML = `
+      <h3>${update.title}</h3>
+      <div class="date">${update.date}</div>
+      <div class="update-content">
+        ${update.content}
+      </div>
+      <button class="expand-btn">Read more</button>
+    `;
+
+            // Insert the new card *before* the "Show more" button,
+            // or at the end if the button doesn't exist.
+            if (showMoreBtn) {
+                container.insertBefore(card, showMoreBtn);
+            } else {
+                container.appendChild(card);
+            }
+        }
     });
 
 </script>
