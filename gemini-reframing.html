@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>I reframed photos using Gemini</title>
+    <link rel="stylesheet" href="blog.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+    <!-- <meta name="description" content="Reflecting the year of 2025. Growth, challenges, classroom experiences, and my hopes for the 2026 year."> -->
+    <!-- <meta name="keywords" content="Tommy Hills, teacher training, reflection, teach first, Canva, PGCE, education journey, teaching experience, classroom confidence, teacher creativity, edtech, AI, ">-->
+    <meta property="og:title" content="I reframed photos using Gemini">
+    <!-- <meta property="og:description" content="Reflecting the year of 2025. Growth, challenges, classroom experiences, and my hopes for the 2026 year."> -->
+    <meta property="og:url" content="https://tommysthoughts.thetommyverse.com/gemini-reframing.html">
+    <meta property="og:type" content="article">
+
+    <style>
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page_text_container">
+      <div class="page_content">
+
+        <h1><b>I reframed photos using Gemini</b></h1>
+        <h3 class="date">Saturday 3rd January 2026</h3>
+        <br> <br>
+        <hr>
+        <div class="blog_text">
+          <p>This post does not feature a single photo of me.</p>
+          <h2>Introduction</h2>
+          <p>The other day, I saw a sponsored post on Instagram that showed how we can use Google Gemini’s Nano Banana to upscale and improve the quality of our pictures. The example in the video was of a concert performance, but I wondered (in a moment of nostalgia) if I could use this on old pictures of me performing.</p>
+
+          <p>But I wanted to push it further. Could I use Gemini’s image generation capabilities to reframe my pictures? I wanted to see if the model can act as an “in-the-moment” photographer for events that happened months or years ago.</p>
+
+          <h2>The Process</h2>
+
+          <p>To generate these photos, I supplied the model with a bad quality photo from a performance (usually a screenshot of the video recording) and a clear professional photo of myself to help it along. It’s important that the model understands what I look like.</p>
+
+          <h2>The Results</h2>
+
+          <p>The answer? Yes it could… but I found the results were bizarre.</p>
+
+          <figure>
+            <img src="/Media/Reframing%20Images/Gemini%20Reframing%20Results.png" alt="The collection of results from Gemini Reframing Experiment" id="styledImage">
+            <figcaption id="imageCaption"></figcaption>
+          </figure>
+
+          <p>I made a few observations:</p>
+
+          <ul>
+            <li><b>Context Retention:</b> The model excelled at backgrounds. Presentation slides translated exceptionally well, preserving the actual text and context of the lecture. I was impressed by this as AI struggles with text in most cases.</li>
+            <li><b>Perspective Integration:</b> Scale was handled effectively. Even when the model moved my position in the frame, I looked like I naturally fit into the scene.</li>
+            <li><b>The "Uncanny Valley":</b> While the generated figures clearly look like me, they feel slightly "off." It captured the likeness but you can tell its not quite a genuine photo.</li>
+            <li><b>The Reframing:</b> The model shined at changing the angles of the shots without losing the context of the original scenes.</li>
+
+          <h2>A Warning</h2>
+
+          <p>However, I also made a blatant error in my experiment. My reference photo did not have glasses, so instead I prompted the model to add them. This resulted in the glasses changing shape and style from photo to photo, an inconsistency that breaks the immersion for anyone who knows I wear the same pair for every show!</p>
+
+          <h2>Conclusion</h2>
+
+          <p>This experiment really shows the potential of AI to recontextualise important moments. Not just upscaling but also reframing. Through my own mistake, it also highlights the need for precise and accurate reference data. It shows how far we have come in image generation capabilities.</p>
+          </div>
+
+        <!-- TODO Change footer styling -->
+        <footer>
+          <p>
+            <button onclick="location.href='https://tommysthoughts.thetommyverse.com';">Back to blog</button>
+          </p>
+        </footer>
+      </div>
+    </div>
+  </body>
+
+  <script src="glossary.js"></script>
+
+<script>
+  document.getElementById('imageCaption').innerText = document.getElementById('styledImage').alt;
+</script>
+
+</html>

@@ -375,6 +375,7 @@
                 <button class="btn" onclick="applyFilters('discussion')">Discussion</button>
                 <button class="btn" onclick="applyFilters('ai')">Artificial Intelligence</button>
                 <button class="btn" onclick="applyFilters('teaching')">Teaching</button>
+                <button class="btn" onclick="applyFilters('experiment')">Experiment</button>
             </div>
             <input type="text" id="searchBar" placeholder="Search blog titles..." onkeyup="applyFilters()" />
         </div>
@@ -383,6 +384,25 @@
 
     <!-- Blog Posts -->
     <div class="blog-container">
+        <div class="blog-card filterDiv experiment ai">
+            <img src="/Media/Barcamp%2024%202.png" alt="Teach First Logo">
+            <div class="blog-content blog-text2">
+                <h3>I reframed photos using Gemini</h3>
+                <h4>Date: January 3rd 2026</h4>
+                <p style="font-family:Arial;">An experiment on using Gemini's image generation to reframe old photos of my shows.</p>
+                <button class="read-more" onclick="location.href='gemini-reframing.html';">READ MORE »</button>
+            </div>
+        </div>
+
+        <div class="blog-card filterDiv teaching ai">
+            <img src="/Media/fireworks.png" alt="Teach First Logo">
+            <div class="blog-content blog-text2">
+                <h3>Happy New Year 2026!</h3>
+                <h4>Date: January 1st 2026</h4>
+                <p style="font-family:Arial;">A reflection on the year 2025 and my hopes for 2026.</p>
+                <button class="read-more" onclick="location.href='2025-reflection.html';">READ MORE »</button>
+            </div>
+        </div>
 
         <div class="blog-card filterDiv teaching ai">
             <img src="/Media/fireworks.png" alt="Teach First Logo">
