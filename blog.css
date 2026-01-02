@@ -757,6 +757,36 @@ ol li {
     text-align: left;
 }
 
+/* Pop-Up Images */
+
+
+
+#styledImage.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: auto;
+    height: auto;
+    max-width: 90vw;  /* 90% of viewport width */
+    max-height: 90vh; /* 90% of viewport height */
+
+    z-index: 9999;
+
+    cursor: zoom-out;
+
+    box-shadow: 0 0 0 1000vw rgba(0, 0, 0, 0.85);
+
+    border-radius: 4px;
+}
+
+#styledImage.active + #imageCaption {
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 
 

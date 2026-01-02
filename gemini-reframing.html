@@ -40,6 +40,12 @@
 
           <p>To generate these photos, I supplied the model with a bad quality photo from a performance (usually a screenshot of the video recording) and a clear professional photo of myself to help it along. It’s important that the model understands what I look like.</p>
 
+          <p>Here is a sample of the prompt that I provided to Gemini. I tried to keep it as simple as possible to be reusable for all the photos provided, whilst clearly steering the model in the right direction towards my desired output.</p>
+
+          <p class="ai-prompt">Here is a picture of me performing.
+          <br>I've also given you a picture of what I look like.<br><br>Please can you improve the quality of the image of me performing and turn it into a close up mid shot in high resolution, while accurately representing the original picture. You can improve the lighting and make me smile slightly while talking. Make sure the presentation slides behind me are still visible. Please make my hair styled nicely.<br><br>The outfit should remain the same as the original performance, and the [variant] hair colour. Make sure you also include the dark purple glasses from the original picture of the performance.
+          </p>
+
           <h2>The Results</h2>
 
           <p>The answer? Yes it could… but I found the results were bizarre.</p>
@@ -80,6 +86,12 @@
 
 <script>
   document.getElementById('imageCaption').innerText = document.getElementById('styledImage').alt;
+  const img = document.getElementById('styledImage');
+
+  img.addEventListener('click', function() {
+    // Toggle the 'active' class on click
+    this.classList.toggle('active');
+  });
 </script>
 
 </html>
