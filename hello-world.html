@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Hello, World!</title>
-    <link rel="stylesheet" href="blog.css"/>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
     <meta name="description" content="A simple 'Hello, World!'. The starting point of my blog. Welcome to Tommy's Thoughts!">
-    <meta name="keywords" content="Tommy Hills, Hello World, blog introduction, Tommy's Thoughts, first blog post, personal blog, tech blog, creative blog">
+    <meta name="keywords" content="Tommy Hills, Hello World, blog introduction, Tommy's Thoughts, first blog post">
+    <meta name="author" content="Tommy Hills">
+
     <meta property="og:title" content="Hello, World!">
-    <meta property="og:description" content="A simple 'Hello, World!'. The starting point of my blog. Welcome to Tommy's Thoughts!">
+    <meta property="og:description" content="A simple 'Hello, World!'. The starting point of my blog.">
     <meta property="og:url" content="https://tommysthoughts.thetommyverse.com/hello-world.html">
     <meta property="og:type" content="article">
-  </head>
 
-  <body>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="blog.css" type="text/css">
+</head>
 
-    <div class="page_text_container">
-      <div class="page_content">
+<body>
 
-        <h1><b>Hello, World!</b></h1>
-        <h3 class="date">Wednesday 1st January 2025</h3>
-        <br> <br>
-        <hr>
-        <p class="text_computer">Hello, World!</p>
+    <div class="blog-post-wrapper">
+        <article class="page_content">
 
-        <!-- TODO Change footer styling -->
-        <footer>
-          <p>
-            <button onclick="location.href='https://tommysthoughts.thetommyverse.com';">Back to blog</button>
-          </p>
-        </footer>
-      </div>
+            <header class="article-header">
+                <h1><b>Hello, World!</b></h1>
+                <h3 class="date">Wednesday 1st January 2025</h3>
+            </header>
+
+            <section class="blog_text">
+                <p class="text_computer text-center">
+                    <span class="glossary-term">HelloWorld</span>
+                </p>
+                <p class="text_computer text-center">
+                    Welcome to Tommy's Thoughts.
+                </p>
+            </section>
+
+            <footer class="blog-nav-footer">
+                <button class="btn" onclick="location.href='index.html';">Back to blog</button>
+            </footer>
+
+        </article>
     </div>
-  </body>
 
-  <script src="glossary.js"></script>
-
+    <script src="glossary.js"></script>
+</body>
 </html>

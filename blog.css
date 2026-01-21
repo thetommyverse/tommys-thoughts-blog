@@ -1,13 +1,20 @@
-/* Import fonts */
+/* ==========================================================================
+   1. IMPORTS & FONTS
+   ========================================================================== */
+/* Blog/Code Font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+/* Heading/UI Font */
 @import url("https://fonts.cdnfonts.com/css/tw-cen-mt-std");
 
-/* ================================ */
-/*        Global Variables          */
-/* ================================ */
+/* ==========================================================================
+   2. GLOBAL VARIABLES
+   ========================================================================== */
 :root {
-    --text_font: "Roboto", sans-serif;
+    /* --- Typography --- */
+    --text_font: "Roboto", sans-serif;       /* UI elements, Footer, Main Page */
+    --blog-font: "JetBrains Mono", monospace; /* Blog posts, Code, Technical text */
 
-    /* Color Theme */
+    /* --- Theme Colors --- */
     --mainpurple: #6008ac;
     --lightpurple: #b084cc;
     --yellowalt: #edbd2d;
@@ -16,9 +23,10 @@
     --mainblack: #000000;
     --maingrey: #ccc;
 
-    /* Styling colours */
+    /* --- Utility Colors --- */
     --default-color: #2d2d2d;
     --grey: #9e9e9e;
+    --light-grey: #f5f5f5;
     --red: #eb5757;
     --orange: #f2994a;
     --yellow: #f2c94c;
@@ -29,23 +37,46 @@
     --pink: #ff4d94;
     --brown: #8d6e63;
     --cyan: #00bcd4;
-    --light-grey: #f5f5f5;
 }
 
-/* ================================ */
-/*          Global Styles           */
-/* ================================ */
+/* ==========================================================================
+   3. GLOBAL RESET & BODY STYLES
+   ========================================================================== */
 body {
     background-color: var(--mainwhite);
     font-family: var(--text_font);
-    font-size: 18px;
-    line-height: 1.43; /* Improved readability */
+    font-size: 18px; /* Base size */
+    line-height: 1.6;
     color: var(--mainblack);
+    margin: 0;
 }
 
-/* ================================ */
-/*          Headings Styles         */
-/* ================================ */
+/* Hyperlinks */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+a:hover {
+    background-color: var(--mainpurple);
+    color: var(--mainwhite);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+/* Specific Link Styles */
+#link { color: var(--purple); text-decoration: underline; }
+#link:hover { color: var(--mainwhite); }
+
+#link-alt { color: var(--blue); text-decoration: underline; }
+#link-alt:hover { color: var(--mainwhite); background-color: var(--blue); }
+
+/* ==========================================================================
+   4. TYPOGRAPHY
+   ========================================================================== */
 h1 {
     font-size: 3rem;
     font-weight: 800;
@@ -60,41 +91,37 @@ h1 {
     transition: color 0.3s ease-in-out;
 }
 
-/* Underline effect for h1 */
-h1::after {
+h2 { text-align: center; margin-top: 40px; margin-bottom: 20px; }
+
+h1::after, h2::after {
     content: "";
     display: block;
     width: 100px;
     height: 4px;
-    background: var(--lightpurple);
     margin: 12px auto 0;
     border-radius: 2px;
     transition: width 0.3s ease-in-out;
 }
 
-/* Hover effect on heading */
-h1:hover::after {
-    width: 120px;
+h1::after { background: var(--lightpurple); }
+h1:hover::after, h2:hover::after { width: 120px; }
+h2::after { background: var(--purple); }
+
+h3:hover { opacity: 1; }
+
+/* Paragraphs & Lists */
+p, ul li, ol li {
+    font-family: var(--blog-font);
+    font-size: 1.2rem; /* approx 21-22px */
+    text-align: left;
+    margin-bottom: 15px;
 }
 
-/* Underline effect for h2 */
-h2::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: var(--purple);
-    margin: 12px auto 0;
-    border-radius: 2px;
-    transition: width 0.3s ease-in-out;
-}
+/* Helper Classes */
+.main-page { font-family: var(--text_font); }
+.text_computer { font-family: var(--blog-font); font-size: 1.2rem; }
+.blog_text { text-align: left; }
 
-/* Hover effect on heading */
-h2:hover::after {
-    width: 120px;
-}
-
-/* Styling for post date */
 .date {
     font-size: 1.3rem;
     font-weight: 500;
@@ -108,165 +135,12 @@ h2:hover::after {
     transition: opacity 0.3s ease-in-out;
 }
 
-h3:hover {
-    opacity: 1;
-}
-
-/* ================================ */
-/*       Page Content Styles        */
-/* ================================ */
-.page_text_container {
-    position: relative;
-    text-align: center;
-    padding: 0;
-    margin-top: 25px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.page_content {
-    width: 75%;
-    margin: 5px;
-}
-
-/* Centering images */
-.outer-img-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-figcaption {
-    font-size: 12px;
-    font-style: italic;
-    text-align: center;
-    margin-top: 5px;
-    outline: 1px solid var(--maingrey);
-    padding: 5px;
-}
-
-/* ================================ */
-/*           Footer Styles          */
-/* ================================ */
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-top: 5px solid var(--maingrey);
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Footer Button Styling */
-footer button {
-    background-color: var(--lightpurple);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-footer button:hover {
-    background-color: var(--mainpurple);
-    transform: scale(1.05);
-}
-
-/* Footer Button Styling */
-#exit-button {
-    background-color: var(--lightpurple);
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 5px;
-}
-
-#exit-button:hover {
-    background-color: var(--mainpurple);
-    transform: scale(1.05);
-}
-
-
-/* Read more Button Styling */
-.read {
-    background-color: var(--maingrey);
-    color: var(--mainblack);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-bottom: 50px;
-}
-
-.read:hover {
-    background-color: var(--mainpurple);
-    transform: scale(1.05);
-    color: var(--mainwhite);
-}
-
-/* ================================ */
-/*      Blog Text Customization     */
-/* ================================ */
-.text_computer {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 150%;
-}
-
-.blog_text {
-    text-align: left;
-}
-
-p {
-    font-family: var(--text_font), serif;
-    font-size: 150%;
-    text-align: left;
-
-}
-
-/* ================================ */
-/*      Hyperlink Hover Effect      */
-/* ================================ */
-
-a:hover {
-    background-color: var(--mainpurple);
-    color: var(--mainwhite);
-    transition: 0.2s;
-    padding: 5px 10px;
-    border-radius: 10px;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-}
-
-/* ================================= */
-/*       Text Alignment Classes      */
-/* ================================= */
+/* Alignment Utilities */
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
-p {
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.main-page {
-    font-family: var(--text_font);
-}
-
-footer p {
-    font-family: var(--text_font);
-}
-
-/* ================================= */
-/*      Standard Color Classes       */
-/* ================================= */
+/* Color Utilities */
 .text-default { color: var(--default-color); }
 .text-grey { color: var(--grey); }
 .text-red { color: var(--red); }
@@ -280,67 +154,371 @@ footer p {
 .text-brown { color: var(--brown); }
 .text-cyan { color: var(--cyan); }
 
-/* ================================= */
-/*     Text Highlighting             */
-/* ================================= */
+
+/* ==========================================================================
+   5. LAYOUT & GRID SYSTEMS
+   ========================================================================== */
+
+/* --- General Containers --- */
+.page_text_container {
+    position: relative;
+    text-align: center;
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.page_content {
+    width: 100%;
+    margin: 0;
+}
+
+/* --- Homepage Layout --- */
+.w3-content > .homepage-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.homepage-layout > .blog-feed { flex: 3; min-width: 0; }
+.homepage-layout > .updates-feed { flex: 1; min-width: 0; }
+
+@media (max-width: 900px) {
+    .w3-content > .homepage-layout { flex-direction: column; }
+    .updates-feed { margin-top: 40px; }
+}
+
+/* --- Blog Grid --- */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover { transform: translateY(-5px); }
+
+.blog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.blog-content { padding: 15px; }
+.blog-content h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.blog-content h4 { font-size: 1.2rem; color: gray; margin-bottom: 10px; }
+.blog-content p { font-size: 1rem; margin-bottom: 15px; }
+.blog-text2 { font-family: Arial, sans-serif; }
+
+
+/* ==========================================================================
+   6. UI COMPONENTS
+   ========================================================================== */
+
+/* --- Buttons --- */
+.btn, .read-more, .read, footer button, #exit-button, .show-more-btn {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Search & Tags */
+#filterSearchContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+#myBtnContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#myBtnContainer .btn {
+    background-color: var(--lightpurple);
+    color: white;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+#myBtnContainer .btn:hover,
+#myBtnContainer .btn.active {
+    background-color: var(--mainpurple);
+    transform: scale(1.05);
+}
+
+#searchBar {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--maingrey);
+    background-color: #fff;
+    color: var(--mainblack);
+    font-size: 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Read More */
+.read-more, .read {
+    background-color: var(--maingrey);
+    color: var(--mainblack);
+    margin-bottom: 50px;
+}
+.read-more:hover, .read:hover {
+    background-color: var(--mainpurple);
+    transform: scale(1.05);
+    color: var(--mainwhite);
+}
+
+.show-more-btn {
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    background-color: var(--mainpurple);
+    margin-top: 10px;
+}
+.show-more-btn:hover { background-color: var(--lightpurple); }
+
+/* Filter Classes */
+.filterDiv { display: none; }
+.show { display: flex; }
+
+
+/* --- Updates Sidebar Cards --- */
+.update-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.update-card h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 0 0 4px 0;
+    text-align: center;
+}
+
+.update-card .date {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.update-content {
+    font-family: var(--blog-font);
+    font-size: 0.8rem;
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.4s ease-out;
+}
+.update-content.expanded { max-height: 5000px; }
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: var(--mainpurple);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 0;
+    margin-top: 10px;
+}
+.expand-btn:hover { text-decoration: underline; }
+
+
+/* --- Reply Cards --- */
+.fancy-reply-card {
+    margin-top: -50px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    font-family: "Raleway", sans-serif;
+    overflow: hidden;
+    transition: max-height 3s ease, box-shadow 3s ease;
+    max-height: 300px;
+    cursor: pointer;
+    position: relative;
+    font-size: 10px;
+    margin-bottom: 75px;
+}
+
+.fancy-reply-card.expanded {
+    max-height: 2000px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.reply-card-top {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+}
+
+.reply-thumbnail {
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.reply-top-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.reply-title {
+    color: #6a1b9a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.reply-date {
+    color: #666;
+    margin: 4px 0 12px 0;
+    text-align: center;
+}
+
+.reply-preview-text-wrapper {
+    position: relative;
+    max-height: 100px;
+    overflow: hidden;
+}
+.fancy-reply-card.expanded .reply-preview-text-wrapper { max-height: none; }
+.reply-preview-text { margin-bottom: 0; }
+
+.fadeout-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.9), #fff);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 2;
+}
+.fancy-reply-card.expanded .fadeout-overlay { opacity: 0; }
+
+.reply-full-content {
+    padding: 0 20px 20px 20px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+}
+.fancy-reply-card.expanded .reply-full-content {
+    opacity: 1;
+    max-height: 2000px;
+}
+
+
+/* ==========================================================================
+   7. BLOG BLOCK COMPONENTS
+   ========================================================================== */
+
+/* --- Highlights --- */
+/* Logic: 
+   Default state: Semi-transparent background (approx 20% opacity), Text color inherited (readable).
+   Hover state: Solid background color (100% opacity), Text color White (or Black for Yellow).
+*/
+
 .highlight {
     padding: 2px 6px;
     border-radius: 4px;
     display: inline;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-}
-
-
-/* Default state: Transparent background with black text */
-.highlight-grey { background-color: rgba(158, 158, 158, 0.1); color: #000; }
-.highlight-red { background-color: rgba(235, 87, 87, 0.1); color: #000; }
-.highlight-orange { background-color: rgba(242, 153, 74, 0.1); color: #000; }
-.highlight-yellow { background-color: rgba(242, 201, 76, 0.1); color: #000; }
-.highlight-green { background-color: rgba(39, 174, 96, 0.3); color: #000; }
-.highlight-teal { background-color: rgba(42, 201, 183, 0.1); color: #000; }
-.highlight-blue { background-color: rgba(45, 156, 219, 0.1); color: #000; }
-.highlight-purple { background-color: rgba(155, 81, 224, 0.1); color: #000; }
-.highlight-pink { background-color: rgba(255, 77, 148, 0.1); color: #000; }
-.highlight-brown { background-color: rgba(141, 110, 99, 0.1); color: #000; }
-.highlight-cyan { background-color: rgba(0, 188, 212, 0.1); color: #000; }
-
-/* Smooth transition effect */
-.highlight-grey,
-.highlight-red,
-.highlight-orange,
-.highlight-yellow,
-.highlight-green,
-.highlight-teal,
-.highlight-blue,
-.highlight-purple,
-.highlight-pink,
-.highlight-brown,
-.highlight-cyan {
     transition: background-color 0.3s ease, color 0.3s ease;
+    color: inherit; /* Default text color */
 }
 
-/* Hover state: Solid color with white or black text for contrast */
-.highlight-grey:hover { background-color: var(--grey); color: #fff; }
-.highlight-red:hover { background-color: var(--red); color: #fff; }
-.highlight-orange:hover { background-color: var(--orange); color: #fff; }
-.highlight-yellow:hover { background-color: var(--yellow); color: #000; }
-.highlight-green:hover { background-color: var(--green); color: #fff; }
-.highlight-teal:hover { background-color: var(--teal); color: #fff; }
-.highlight-blue:hover { background-color: var(--blue); color: #fff; }
-.highlight-purple:hover { background-color: var(--purple); color: #fff; }
-.highlight-pink:hover { background-color: var(--pink); color: #fff; }
-.highlight-brown:hover { background-color: var(--brown); color: #fff; }
-.highlight-cyan:hover { background-color: var(--cyan); color: #fff; }
+/* Grey */
+.highlight-grey { background-color: rgba(158, 158, 158, 0.2); }
+.highlight-grey:hover { background-color: var(--grey); color: #fff !important; }
 
-/* ================================= */
-/*       Full-Width Banner Style     */
-/* ================================= */
+/* Red */
+.highlight-red { background-color: rgba(235, 87, 87, 0.2); }
+.highlight-red:hover { background-color: var(--red); color: #fff !important; }
+
+/* Orange */
+.highlight-orange { background-color: rgba(242, 153, 74, 0.2); }
+.highlight-orange:hover { background-color: var(--orange); color: #fff !important; }
+
+/* Yellow (Text stays black on hover for contrast) */
+.highlight-yellow { background-color: rgba(242, 201, 76, 0.2); }
+.highlight-yellow:hover { background-color: var(--yellow); color: #000 !important; }
+
+/* Green */
+.highlight-green { background-color: rgba(39, 174, 96, 0.2); }
+.highlight-green:hover { background-color: var(--green); color: #fff !important; }
+
+/* Teal */
+.highlight-teal { background-color: rgba(42, 201, 183, 0.2); }
+.highlight-teal:hover { background-color: var(--teal); color: #fff !important; }
+
+/* Blue */
+.highlight-blue { background-color: rgba(45, 156, 219, 0.2); }
+.highlight-blue:hover { background-color: var(--blue); color: #fff !important; }
+
+/* Purple */
+.highlight-purple { background-color: rgba(155, 81, 224, 0.2); }
+.highlight-purple:hover { background-color: var(--purple); color: #fff !important; }
+
+/* Pink */
+.highlight-pink { background-color: rgba(255, 77, 148, 0.2); }
+.highlight-pink:hover { background-color: var(--pink); color: #fff !important; }
+
+/* Brown */
+.highlight-brown { background-color: rgba(141, 110, 99, 0.2); }
+.highlight-brown:hover { background-color: var(--brown); color: #fff !important; }
+
+/* Cyan */
+.highlight-cyan { background-color: rgba(0, 188, 212, 0.2); }
+.highlight-cyan:hover { background-color: var(--cyan); color: #fff !important; }
+
+
+/* --- Banners --- */
 .banner {
     display: block;
     width: 100%;
     padding: 12px;
     border-radius: 6px;
+    position: relative;
+    overflow: hidden;
 }
 
 .banner-grey { background-color: var(--grey); color: #fff; }
@@ -355,68 +533,15 @@ footer p {
 .banner-brown { background-color: var(--brown); color: #fff; }
 .banner-cyan { background-color: var(--cyan); color: #fff; }
 
-/* ================================= */
-/*        Quote Block Style          */
-/* ================================= */
-/* Block Quote */
-.quote {
-    border-left: 4px solid var(--grey);
-    padding: 10px 16px;
-    background-color: var(--light-grey);
-    font-style: italic;
-    color: var(--default-color);
-    font-size: 125% !important;
-    font-family: "Georgia", "Garamond", "Times New Roman", serif; /* More quote-like font */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-}
 
-.quote:hover {
-    background-color: rgba(158, 158, 158, 0.1); /* Slight grey tint */
-    border-left-color: var(--purple); /* Highlight border */
-    transform: translateX(4px); /* Slight shift for a dynamic effect */
-}
-
-/* Inline Quote */
-.quote-inline {
-    border-left: 2px solid var(--grey); /* Thinner border for inline use */
-    padding-left: 8px; /* Small padding to separate from text */
-    font-style: italic;
-    color: var(--default-color);
-    font-size: 80% !important; /* Slightly larger for emphasis but not overpowering */
-    display: inline; /* Ensures it stays within text flow */
-    background-color: var(--light-grey);
-    font-family: "Georgia", "Garamond", "Times New Roman", serif; /* Matching quote style */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-}
-
-.quote-inline:hover {
-    background-color: rgba(158, 158, 158, 0.3); /* More noticeable highlight */
-    border-left-color: var(--purple); /* Highlight border */
-    transform: scale(1.05); /* Slight zoom effect */
-}
-
-
-/* ================================= */
-/*   Prism.js Code Block Styling     */
-/* ================================= */
-pre[class*="language-"] {
-    background: #2d2d2d;
-    padding: 12px;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-family: monospace;
-}
-
-
-/* ================================= */
-/*            Callouts               */
-/* ================================= */
+/* --- Callouts --- */
 .callout {
     padding: 12px;
     border-radius: 6px;
     border-left: 5px solid;
     margin: 10px 0;
-    font-size: 150%;
+    font-size: 1rem;
+    font-family: var(--blog-font); /* ADDED: Ensure callout text uses JetBrains Mono */
     background-color: rgba(45, 45, 45, 0.1);
     color: var(--default-color);
     display: flex;
@@ -424,7 +549,7 @@ pre[class*="language-"] {
     gap: 10px;
 }
 
-/* Color Variants */
+/* Callout Colors */
 .callout.grey { border-color: var(--grey); background-color: rgba(158, 158, 158, 0.1); }
 .callout.red { border-color: var(--red); background-color: rgba(235, 87, 87, 0.1); }
 .callout.orange { border-color: var(--orange); background-color: rgba(242, 153, 74, 0.1); }
@@ -437,6 +562,22 @@ pre[class*="language-"] {
 .callout.brown { border-color: var(--brown); background-color: rgba(141, 110, 99, 0.1); }
 .callout.cyan { border-color: var(--cyan); background-color: rgba(0, 188, 212, 0.1); }
 
+/* Callout Types */
+.callout.note { border-color: #1e88e5; background-color: rgba(30, 136, 229, 0.15); }
+.callout.note::before { content: "📝 Note"; font-weight: bold; }
+
+.callout.warning { border-color: #ffa000; background-color: rgba(255, 160, 0, 0.15); }
+.callout.warning::before { content: "⚠️ Warning"; font-weight: bold; }
+
+.callout.error { border-color: #d32f2f; background-color: rgba(211, 47, 47, 0.15); }
+.callout.error::before { content: "❌ Error"; font-weight: bold; }
+
+.callout.success { border-color: #388e3c; background-color: rgba(56, 142, 60, 0.15); }
+.callout.success::before { content: "✅ Success"; font-weight: bold; }
+
+.callout.info { border-color: #0288d1; background-color: rgba(2, 136, 209, 0.15); }
+.callout.info::before { content: "ℹ️ Info"; font-weight: bold; }
+
 .callout-title {
     font-weight: bold;
     margin-bottom: 5px;
@@ -445,63 +586,29 @@ pre[class*="language-"] {
     gap: 5px;
 }
 
-/* Stock Callouts with Icons and Titles */
-.callout.note {
-    border-color: #1e88e5;
-    background-color: rgba(30, 136, 229, 0.15);
+
+/* --- Quotes --- */
+.quote {
+    border-left: 4px solid var(--grey);
+    padding: 10px 16px;
+    background-color: var(--light-grey);
+    font-style: italic;
+    font-family: var(--blog-font);
+    color: var(--default-color);
 }
-.callout.note::before {
-    content: "📝 Note";
-    font-weight: bold;
+.quote-inline {
+    border-left: 2px solid var(--grey);
+    padding-left: 8px;
+    font-style: italic;
+    font-family: var(--blog-font);
+    color: var(--default-color);
+    display: inline;
 }
 
-.callout.warning {
-    border-color: #ffa000;
-    background-color: rgba(255, 160, 0, 0.15);
-}
-.callout.warning::before {
-    content: "⚠️ Warning";
-    font-weight: bold;
-}
 
-.callout.error {
-    border-color: #d32f2f;
-    background-color: rgba(211, 47, 47, 0.15);
-}
-.callout.error::before {
-    content: "❌ Error";
-    font-weight: bold;
-}
-
-.callout.success {
-    border-color: #388e3c;
-    background-color: rgba(56, 142, 60, 0.15);
-}
-.callout.success::before {
-    content: "✅ Success";
-    font-weight: bold;
-}
-
-.callout.info {
-    border-color: #0288d1;
-    background-color: rgba(2, 136, 209, 0.15);
-}
-.callout.info::before {
-    content: "ℹ️ Info";
-    font-weight: bold;
-}
-
-/* Two-Column Layout */
-.column-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-}
-
-/* ================================= */
-/*        Table Styling             */
-/* ================================= */
+/* --- Tables --- */
 table {
+    font-family: var(--blog-font);
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
@@ -516,108 +623,37 @@ th, td {
     border: 1px solid var(--grey);
     text-align: left;
 }
+th { background-color: var(--purple); color: white; font-weight: bold; }
+tr:nth-child(even) { background-color: #e8e8e8; }
 
-th {
-    background-color: var(--purple);
-    color: white;
-    font-weight: bold;
+
+/* --- Code Blocks --- */
+pre[class*="language-"] {
+    background: #2d2d2d;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: monospace;
 }
 
-tr:nth-child(even) {
-    background-color: #e8e8e8;
+
+/* ==========================================================================
+   8. IMAGES & ANIMATIONS
+   ========================================================================== */
+figure {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 90%;
 }
 
-/* Modernize the filter bar */
-#tags {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 15px 0;
-}
-
-/* Header styling */
-#tags h4 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* Style the button container */
-#myBtnContainer {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-/* Base button styles */
-.btn {
-    background: var(--lightpurple); !important;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover and active state */
-.btn:hover {
-    background-color: var(--mainpurple); !important;
-    color: var(--mainwhite);
-    transform: scale(1.05);
-}
-
-.btn.active {
-    background: var(--mainpurple); !important;
-    color: white;
-}
-
-.btn.active:hover {
-    background-color: var(--mainpurple); !important;
-    color: var(--mainwhite);
-    transform: scale(1.05);
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    #myBtnContainer {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-#rounded {
-    border-radius: 12px;
-}
-
-#rounded-image {
-    border-radius: 12px 12px 0px 0px;
-}
-
-/* Ensure the image is responsive */
 figure img {
     max-width: 75%;
     height: auto;
     display: block;
     margin: 0 auto;
-    border-radius: 8px; /* Optional: rounded corners */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
-}
-
-/* Style for figure and caption */
-figure {
-    text-align: center;
-    margin: 20px auto;
-    max-width: 90%; /* Prevents images from being too wide */
 }
 
 figcaption {
@@ -626,34 +662,65 @@ figcaption {
     color: #555;
     margin-top: 5px;
     max-width: 75%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 5px;
+    outline: 1px solid var(--maingrey);
 }
 
-#link {
-    color: var(--purple);
-    text-decoration: underline;
+/* Pop-Up Image */
+#styledImage.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 9999;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 1000vw rgba(0, 0, 0, 0.85);
+    border-radius: 4px;
+}
+#styledImage.active + #imageCaption { opacity: 0; visibility: hidden; }
+
+/* Banner Animations */
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: fadeInScale 1s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
 }
 
-#link:hover {
-    color: var(--mainwhite);
+.buy-button {
+    position: absolute;
+    bottom: 7.5%;
+    left: 76%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: var(--lightpurple);
+    color: white;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+.buy-button:hover { background-color: var(--mainpurple); }
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-#link-alt {
-    color: var(--blue);
-    text-decoration: underline;
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translate(-50%, 30px); }
+    100% { opacity: 1; transform: translate(-50%, 0); }
 }
 
-#link-alt:hover {
-    color: var(--mainwhite);
-    background-color: var(--blue);
-}
-
-/* ================================= */
-/*        Prompts from AI            */
-/* ================================= */
-
+/* AI Prompt Box (Dark Theme) */
 @keyframes swirlGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -661,43 +728,73 @@ figcaption {
 }
 
 .ai-prompt {
-    /* background: linear-gradient(135deg, #1b0f2a, #2b1e3b, #320267, #341e3b);*/
-    background: linear-gradient(135deg, #f7e1fb, #f1d1f5, #dcc1f6, #f2e9f5);
+    background: linear-gradient(135deg, #1b0f2a, #2b1e3b, #320267, #341e3b);
     background-size: 300% 300%;
-    animation: swirlGradient 10s infinite linear;
-    color: black;
-    font-family: "Courier New", Courier, monospace;
-    border-left: 5px solid #b238f8; /* Purple left border */
-    border-right: 5px solid #b238f8; /* Purple right border */
+    animation: swirlGradient 6s infinite linear;
+    color: white;
+    font-family: var(--blog-font);
+    border-left: 5px solid #b238f8;
+    border-right: 5px solid #b238f8;
     padding: 16px;
+    padding-top: 30px;
     border-radius: 8px;
-    /*box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);*/
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
     margin: 24px 0;
     white-space: pre-wrap;
     word-break: break-word;
-    position: relative; /* Allows precise positioning of the label */
-    padding-top: 30px;
+    position: relative;
 }
 
-/* Centered Label with Bottom Purple Border */
 .ai-prompt::before {
     content: "Prompt";
     position: absolute;
-    top: -12px; /* Moves it slightly above the box */
+    top: -12px;
     left: 50%;
-    transform: translateX(-50%); /* Centers it */
+    transform: translateX(-50%);
     background: black;
     color: white;
-    padding: 4px 50px; /* Adds left/right padding */
+    padding: 4px 50px;
     font-size: 14px;
     font-weight: bold;
-    border-radius: 8px 8px 8px 8px;
-    border-bottom: 3px solid #b238f8; /* Purple border on bottom */
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);*/
-    white-space: nowrap; /* Ensures it doesn’t wrap */
+    border-radius: 8px;
+    border-bottom: 3px solid #b238f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
 }
 
-/* Extra styling for alternate button */
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    width: 100%;
+    border-top: 5px solid var(--maingrey);
+}
+
+footer p { margin: 0; font-family: var(--text_font); }
+
+.about-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: max-width 2s ease;
+    margin-bottom: 20px;
+}
+
+.about-card img { width: 100%; height: 250px; object-fit: cover; }
+.about-text { padding: 20px; }
 
 .button-group {
     display: flex;
@@ -705,6 +802,7 @@ figcaption {
     gap: 10px;
     flex-wrap: wrap;
     margin-top: 10px;
+    justify-content: center;
 }
 
 .footer-button {
@@ -713,80 +811,141 @@ figcaption {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    height: 100%; /* Ensures equal height */
-    box-sizing: border-box;
-    background-color: var(--primary-color, #eee); /* fallback if --primary-color is not set */
+    background-color: #eee;
     color: black;
 }
 
-.yellow-button {
-    background-color: var(--lightyellow);
+.yellow-button { background-color: var(--lightyellow); }
+.yellow-button:hover { background-color: var(--yellowalt); }
+.purple-button { background-color: var(--lightpurple); color: white; }
+
+
+/* ==========================================================================
+   10. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (min-width: 600px) {
+    .about-card {
+        flex-direction: row;
+        text-align: left;
+        width: 90%;
+        height: 300px;
+    }
+    .about-card img { width: 40%; height: 100%; }
+    .about-text { width: 60%; }
 }
 
-.purple-button {
-    background-color: var(--lightpurple);
-    color:white;
-}
-
-.yellow-button:hover {
-    background-color: var(--yellowalt);
-}
-
-/* Responsive layout: stack buttons vertically on smaller screens */
 @media (max-width: 806px) {
     .button-group {
         flex-direction: column;
         align-items: flex-start;
     }
+    .footer-button { width: 100%; max-width: 300px; }
+}
 
-    .footer-button {
-        width: 100%;
-        max-width: 300px;
+@media (max-width: 700px) {
+    #myBtnContainer { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; text-align: center; }
+    
+    .reply-card-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
+    .reply-thumbnail { width: 70%; height: auto; transition: width 2s; }
+    .reply-top-right { margin-top: 15px; text-align: left; }
 }
 
-ul li {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 150%;
-    text-align: left;
+/* ==========================================================================
+   11. INDEX PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+/* Main wrapper width (Replacing w3 inline style) */
+.main-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-ol li {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 150%;
-    text-align: left;
+/* Header Text Alignment */
+.header-welcome {
+    text-align: center;
+    font-size: 1.5rem; /* ADDED: Increased font size for subheading */
 }
 
-/* Pop-Up Images */
-
-
-
-#styledImage.active {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: auto;
-    height: auto;
-    max-width: 90vw;  /* 90% of viewport width */
-    max-height: 90vh; /* 90% of viewport height */
-
-    z-index: 9999;
-
-    cursor: zoom-out;
-
-    box-shadow: 0 0 0 1000vw rgba(0, 0, 0, 0.85);
-
-    border-radius: 4px;
+/* Index Body Spacing */
+.index-body {
+    margin-top: 15px;
 }
 
-#styledImage.active + #imageCaption {
-    opacity: 0;
-    visibility: hidden;
+/* Updates Sidebar Title */
+.updates-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
 }
 
+/* About Card Name Styling */
+.about-name {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+}
 
+/* Card Description Font (Arial override from original HTML) */
+.card-desc {
+    font-family: Arial, sans-serif;
+}
 
+/* ==========================================================================
+   12. SINGLE BLOG POST STYLES
+   ========================================================================== */
 
+/* Wrapper for individual blog pages - FIXED WIDTH & CENTERING */
+.blog-post-wrapper {
+    width: 75%;
+    max-width: 1400px; /* Cap it on ultra-wide screens */
+    margin: 0 auto; /* Ensure centering */
+    padding: 20px;
+    background-color: var(--mainwhite);
+    display: block; 
+}
+
+/* Article Header styling */
+.article-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--maingrey);
+    padding-bottom: 20px;
+}
+
+/* Glossary Term Styling - Adds a dashed underline and help cursor */
+.glossary-term {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--mainpurple);
+    cursor: help;
+    position: relative;
+}
+
+.glossary-term:hover {
+    color: var(--mainpurple);
+    font-weight: bold;
+}
+
+/* Navigation Footer in Blog Posts */
+.blog-nav-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--maingrey);
+    text-align: center;
+}
+
+/* Ensure Lists in blogs align with the 'Tech' aesthetic */
+article ul, article ol {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+article li {
+    margin-bottom: 10px;
+}

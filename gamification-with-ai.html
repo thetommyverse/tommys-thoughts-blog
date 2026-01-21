@@ -1,496 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Turning Lessons into Games: My Journey with Canva Code and Gamification</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="blog.css"/>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <style>
-    ul {
-      font-family: "Courier New", Courier, monospace !important;
-      text-align: left !important;
+    <title>Turning Lessons into Games: My Journey with Canva Code</title>
 
-    }
-    li {
-      font-family: "Courier New", Courier, monospace !important;
-      text-align: left !important;
+    <meta name="description" content="Discover how Tommy Hills uses Canva Code to create interactive, AI-powered classroom games. A practical guide to gamification and AI in education.">
+    <meta name="keywords" content="Tommy Hills, AI widgets, web widgets with AI, Canva Code, teaching tools, AI in education, interactive lessons, AI teaching resources, Canva for teaching, gamified learning, educational games, classroom engagement">
+    <meta name="author" content="Tommy Hills">
 
-    }
+    <meta property="og:title" content="Turning Lessons into Games! Gamification with Canva Code">
+    <meta property="og:description" content="Explore how AI and Canva Code helped transform revision into interactive, playable classroom tools.">
+    <meta property="og:url" content="https://tommysthoughts.thetommyverse.com/gamification-with-ai.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="Media/Gamification-with-AI.png">
 
-    .fancy-reply-card {
-      margin-top: -50px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      background: #ffffff;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      font-family: "Raleway", sans-serif;
-      overflow: hidden;
-      transition: max-height 3s ease, box-shadow 3s ease;
-      max-height: 300px;
-      cursor: pointer;
-      position: relative;
-      font-size: 10px;
-    }
-
-    .fancy-reply-card.expanded {
-      max-height: 2000px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-    }
-
-    .reply-card-top {
-      display: flex;
-      flex-direction: row;
-      padding: 20px;
-      gap: 20px;
-    }
-
-    /* Default thumbnail size */
-    .reply-thumbnail {
-      width: 200px;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-
-
-    /* Full stacking layout for small mobile screens */
-    @media (max-width: 700px) {
-      .reply-card-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .fancy-reply-card {
-        transition: max-height 3s ease, box-shadow 3s ease;
-      }
-
-      .reply-thumbnail {
-        width: 70%;
-        height: auto;
-        transition: width 2s;
-      }
-
-      .reply-top-right {
-        margin-top: 15px;
-        text-align: left;
-      }
-    }
-
-    .reply-top-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .reply-title {
-      color: #6a1b9a;
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin: 0;
-    }
-
-    .reply-date {
-      color: #666;
-      margin: 4px 0 12px 0;
-      text-align: center;
-    }
-
-    .reply-preview-text-wrapper {
-      position: relative;
-      max-height: 100px;
-      overflow: hidden;
-    }
-
-
-
-    .fancy-reply-card.expanded .reply-preview-text-wrapper {
-      max-height: none;
-    }
-
-    .reply-preview-text {
-      margin-bottom: 0;
-    }
-
-    .fadeout-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.9), #fff);
-      pointer-events: none;
-      opacity: 1;
-      transition: opacity 0.4s ease;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-      z-index: 2;
-    }
-
-    .fancy-reply-card.expanded .fadeout-overlay {
-      opacity: 0;
-    }
-
-    .reply-full-content {
-      padding: 0 20px 20px 20px;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.6s ease, opacity 0.4s ease;
-    }
-
-    .fancy-reply-card.expanded .reply-full-content {
-      opacity: 1;
-      max-height: 2000px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 700px) {
-      .reply-card-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-
-      .reply-top-right {
-        margin-top: 15px;
-        text-align: left;
-      }
-    }
-
-  </style>
-
-
-
-  <!-- TODO -->
-  <!-- Meta Tags for SEO and Social Sharing -->
-  <meta name="description" content="Discover how Tommy Hills uses Canva Code to create interactive, AI-powered classroom games. A practical guide to gamification and AI in education.">
-  <meta name="keywords" content="Tommy Hills, AI widgets, web widgets with AI, Canva Code, teaching tools, AI in education, interactive lessons, AI teaching resources, Canva for teaching, gamified learning, educational games, classroom engagement">
-
-  <!-- Open Graph (OG) Tags for Social Sharing -->
-  <meta property="og:title" content="Turning Lessons into Games! Gamification with Canva Code">
-  <meta property="og:description" content="Explore how AI and Canva Code helped transform revision into interactive, playable classroom tools. From Minesweeper to Snake to SketchUp Dash, discover practical tips and success stories.">
-  <meta property="og:url" content="https://tommysthoughts.thetommyverse.com/gamification-with-ai.html">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="Media/Gamification-with-AI.png" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="blog.css" type="text/css">
 </head>
 
 <body>
-<div class="page_text_container">
-  <div class="page_content">
 
-    <h1><b>Turning Lessons into Games: My Journey with Canva Code and Gamification</b></h1>
-    <h3 class="date">Monday 21st July 2025</h3>
-    <br> <br>
-    <hr>
+    <div class="blog-post-wrapper">
+        <article class="page_content">
 
-    <div class="fancy-reply-card" style="margin-bottom: 75px;" onclick="toggleReplyPreview(this)">
-      <div class="reply-card-top">
-        <img src="/Media/AI%20Widgets%20Blog%20Post%20Background.png" alt="Preview image for previous post" class="reply-thumbnail" />
-        <div class="reply-top-right">
-          <h3 class="reply-title">↪ Replying to: <a href="web-widgets-with-ai.html">“I used AI to build vital tools for teaching.”</a></h3>
-          <p class="reply-date">Sunday 27th April 2025</p>
-          <div class="reply-preview-text-wrapper">
-            <p class="reply-preview-text">
-              From binary games to packet simulators, I've discussed how I have used AI to build vital tools for teaching. The journey started with Claude, then tried ChatGPT’s Canvas, and now I use Canva’s AI tools.
-            </p>
-            <div class="fadeout-overlay"></div>
-          </div>
-        </div>
-      </div>
+            <header class="article-header">
+                <h1><b>Turning Lessons into Games: My Journey with Canva Code</b></h1>
+                <h3 class="date">Monday 21st July 2025</h3>
+            </header>
 
-      <div class="reply-full-content">
-        <h4>Introduction</h4>
+            <section class="blog_text">
+                
+                <div class="fancy-reply-card" style="margin-bottom: 75px;" onclick="toggleReplyPreview(this)">
+                    <div class="reply-card-top">
+                        <img src="/Media/AI%20Widgets%20Blog%20Post%20Background.png" alt="Preview image for previous post" class="reply-thumbnail" />
+                        <div class="reply-top-right">
+                            <h3 class="reply-title">↪ Replying to: <a href="web-widgets-with-ai.html">“I used AI to build vital tools for teaching.”</a></h3>
+                            <p class="reply-date">Sunday 27th April 2025</p>
+                            <div class="reply-preview-text-wrapper">
+                                <p class="reply-preview-text">
+                                    From binary games to packet simulators, I've discussed how I have used AI to build vital tools for teaching. The journey started with Claude, then tried ChatGPT’s Canvas, and now I use Canva’s AI tools.
+                                </p>
+                                <div class="fadeout-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reply-full-content">
+                        <h2>Introduction</h2>
+                        <p>During our first Teach First in-person training day, we were given a talk from <a id="link" href="https://www.linkedin.com/in/becci-peters/">Becci Peters</a> about a unique use of <span class="glossary-term">LLM</span> models, specifically <a id="link" href="http://Claude.ai">Claude.ai</a>. This use was creating generated artefacts, <span class="glossary-term">React</span>-based webpages that can be shared with the public via a URL. During the training day we were encouraged to build a tool for teaching, and I built a small <span class="glossary-term">Binary</span> number converter widget.</p>
 
-        <p>During our first Teach First in-person training day, we were given a talk from <a id="link" href="https://www.linkedin.com/in/becci-peters/">Becci Peters</a> about a unique use of LLM models, specifically <a id="link" href="http://Claude.ai">Claude.ai</a>. This use was creating generated artefacts, react-based webpages that can be shared with the public via a URL. During the training day we were encouraged to build a tool for teaching, and I built a small binary number converter widget.</p>
+                        <p>Although only given 10 minutes or so to write a <span class="glossary-term">Prompt</span> and generate a widget, I could already see the potential, combining this feature with my own experience of prompt engineering. All I needed was a useful application for this tool in the classroom, and at the end of Term 1, an opportunity presented itself.</p>
 
-        <p>Although only given 10 minutes or so to write a prompt and generate a widget, I could already see the potential, combining this feature with my own experience of prompt engineering. All I needed was a useful application for this tool in the classroom, and at the end of Term 1, an opportunity presented itself.</p>
+                        <h2>Claude AI Artefacts</h2>
+                        <p>I used these technology to build a searching and sorting algorithms <span class="glossary-term">Visualiser</span> for use with my Year 11 pupils. The wonderful features of this widget is being able to pick which sort or sort, enter or generate a dataset and then see the algorithm in action. These provided a wonderful demonstration of these algorithms for the pupils to watch and engage with.</p>
 
-        <h4>Claude AI Artefacts</h4>
+                        <p>However, I saw potential. I have found that pupils sometimes struggle with the tag-based structure of HTML programming. I needed a simpler interface for pupils to program in HTML. I looked at programs like <a id="link" href="https://scratch.mit.edu/">Scratch</a> and <a id="link" href="https://trinket.io/">Trinket.io</a> that provide block-based programming. I therefore used Claude to build a drag-and-drop <a id="link-alt" href="https://claude.site/artifacts/50af64df-cbd3-4b56-9e64-0b2e5ad7b3b7">‘code editor’</a> for HTML. Pupils can drag the blocks together to build their websites, add images by dragging an image onto the screen and even apply CSS styling via a list on the side of the page. This was the pot realised although there were so problems faced.</p>
 
-        <p>I used these technology to build a searching and sorting algorithms visualiser for use with my Year 11 pupils. The wonderful features of this widget is being able to pick which sort or sort, enter or generate a dataset and then see the algorithm in action. These provided a wonderful demonstration of these algorithms for the pupils to watch and engage with.</p>
+                        <p>The main problem faced was with the <span class="glossary-term">Context Window</span> (context-length) in generations. Claude had a limit on the amount of content (code) the LLM chatbot can generate, and sometimes the code would stop in the middle of the code or not let me prompt the chat any further.</p>
 
-        <p>However, I saw potential. I have found that pupils sometimes struggle with the tag-based structure of HTML programming. I needed a simpler interface for pupils to program in HTML. I looked at programs like <a id="link" href="https://scratch.mit.edu/">Scratch</a> and <a id="link" href="https://trinket.io/">Trinket.io</a> that provide block-based programming. I therefore used Claude to build a drag-and-drop <a id="link-alt" href="https://claude.site/artifacts/50af64df-cbd3-4b56-9e64-0b2e5ad7b3b7">‘code editor’</a> for HTML. Pupils can drag the blocks together to build their websites, add images by dragging an image onto the screen and even apply CSS styling via a list on the side of the page. This was the pot realised although there were so problems faced.</p>
+                        <p>The solution to this was to create new versions of the tool, with my changes and additions added to the prompt. In other words, regenerate the tool with the changes in a new chat window. This worked but felt incredibly clunky to use and made tweaking and refining the tool quite challenging.</p>
 
-        <p>The main problem faced was with the context-length in generations. Claude had a limit on the amount of content (code) the LLM chatbot can generate, and sometimes the code would stop in the middle of the code or not let me prompt the chat any further.</p>
+                        <h2>ChatGPT Canvas</h2>
+                        <p>This process soon became available for <a id="link" href="https://chatgpt.com/">ChatGPT</a> through their Canvas feature. This worked a lot better for creating a back-and-forth prompting process and meant I could guide the tool creation much more successfully. I used this to build <a id="link-alt" href="https://chatgpt.com/canvas/shared/67dbc92a8de0819186dc5e914ba90fac">‘The Binary Game’</a>; a worksheet I had designed that I instead gamified into a web widget that the pupils could play. This was a fantastic little creation and the pupils responded really well to it.</p>
 
-        <p>The solution to this was to create new versions of the tool, with my changes and additions added to the prompt. In other words, regenerate the tool with the changes in a new chat window. This worked but felt incredibly clunky to use and made tweaking and refining the tool quite challenging.</p>
+                        <h2>Canva Code</h2>
+                        <p>This changed everything!</p>
 
-        <h4>ChatGPT Canvas</h4>
+                        <p>Most recently <a id="link" href="https://www.canva.com/">Canva</a> brought out a feature in their Canva Create event called “<span class="glossary-term">Canva Code</span>”, where uses can ask Canva to create a webpage / web widget and then it can be used in a design and published to a webpage. Immediately after trying it, the widgets I was able to create were vastly superior to ChatGPT’s Canvas or Claude’s Artefacts. These apps were built using <span class="glossary-term">Tailwind</span> for styling, and could create animations, intractable elements and so much more. I’ve been creating tools ever since, with this as my go-to creator, instead of Claude or ChatGPT.</p>
 
-        <p>This process soon became available for <a id="link" href="https://chatgpt.com/">ChatGPT</a> through their Canvas feature. This worked a lot better for creating a back-and-forth prompting process and meant I could guide the tool creation much more successfully. I used this to build <a id="link-alt" href="https://chatgpt.com/canvas/shared/67dbc92a8de0819186dc5e914ba90fac">‘The Binary Game’</a>; a worksheet I had designed that I instead gamified into a web widget that the pupils could play. This was a fantastic little creation and the pupils responded really well to it.</p>
+                        <p>So far these have included a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/-packet-switching-simulator-v3">‘Packet Switching Simulator’</a>, an improved version of my <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/searching-and-sorting-algorithms-visualiser-version-2">‘Searching and Sorting Algorithm Visualiser’</a> and an <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/website-interactive-demo">‘interactive web design demo’</a>. I’ve put the ‘Packet Switching Simulator’ into my lesson when teaching networks to Year 7 pupils, and they loved it. It’s already on version 3, as I’ve kept thinking of changes and improvements to make to it. Also with this network’s topic, I built a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/network-bandwidth-simulator">‘Network Bandwidth Simulator'</a> to show more devices and data affect the speed of the network.</p>
 
-        <h4>Canva Code</h4>
+                        <p>So far I have not noticed a context or generation limit and have been able to generate apps with upwards of 1200 lines of code. There’s also been no limit to the number of prompts I have been able to send, with upwards of 12 back and forths for my ‘interactive web design demo’ app.</p>
 
-        <p>This changed everything!</p>
+                        <h2>Conclusion</h2>
+                        <p>This is the best use of AI models in teaching, in my opinion. Taking an idea we have and want to show to our pupils, and making it a reality, quickly and easily. To build this ourselves would take far too long, alongside the normal teacher workload, so this speeds up creating more interactive and engaging lessons. I cannot wait to try this more and take it even further.</p>
+                    </div>
+                </div>
 
-        <p>Most recently <a id="link" href="https://www.canva.com/">Canva</a> brought out a feature in their Canva Create event called “Canva Code”, where uses can ask Canva to create a webpage / web widget and then it can be used in a design and published to a webpage. Immediately after trying it, the widgets I was able to create were vastly superior to ChatGPT’s Canvas or Claude’s Artefacts. These apps were built using Tailwind for styling, and could create animations, intractable elements and so much more. I’ve been creating tools ever since, with this as my go-to creator, instead of Claude or ChatGPT.</p>
+                <div class="fancy-reply-card" onclick="toggleReplyPreview(this)">
+                    <div class="reply-card-top">
+                        <img src="/Media/more-ai-widgets.png" alt="Preview image for previous post" class="reply-thumbnail" />
+                        <div class="reply-top-right">
+                            <h3 class="reply-title">↪ Replying to: <a href="more-web-widgets-with-ai.html">“I built more vital tools using AI.”</a></h3>
+                            <p class="reply-date">Wednesday 28th May 2025</p>
+                            <div class="reply-preview-text-wrapper">
+                                <p class="reply-preview-text">
+                                    I've discussed more of my web widgets created using AI, filled with a variety of different tools, that can all be found on my website.
+                                </p>
+                                <div class="fadeout-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reply-full-content">
+                        <p>Since my last post about using AI to build interactive webpages to help teaching, I've experimented with creating even more resources that I wish to detail here for your own use. These were built using <span class="glossary-term">CanvaCode</span>, by far the best solution for creating these interactive pages, at present.</p>
 
-        <p>So far these have included a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/-packet-switching-simulator-v3">‘Packet Switching Simulator’</a>, an improved version of my <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/searching-and-sorting-algorithms-visualiser-version-2">‘Searching and Sorting Algorithm Visualiser’</a> and an <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/website-interactive-demo">‘interactive web design demo’</a>. I’ve put the ‘Packet Switching Simulator’ into my lesson when teaching networks to Year 7 pupils, and they loved it. It’s already on version 3, as I’ve kept thinking of changes and improvements to make to it. Also with this network’s topic, I built a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/network-bandwidth-simulator">‘Network Bandwidth Simulator'</a> to show more devices and data affect the speed of the network.</p>
+                        <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/interactive-network-building">Networks (Topology) Builder - Game</a></h3>
+                        <p>A game that invites users to connect components together to create different networks. The later levels focus on Network Topologies such as Star, Bus, Ring, etc.). A great visual tool for understanding how network <span class="glossary-term">Topology</span> can be arranged.</p>
 
-        <p>So far I have not noticed a context or generation limit and have been able to generate apps with upwards of 1200 lines of code. There’s also been no limit to the number of prompts I have been able to send, with upwards of 12 back and forths for my ‘interactive web design demo’ app.</p>
+                        <figure>
+                            <img src="/Media/More-Web-Widgets-Screenshots/Networks Builder.webp" alt="Screenshot of Networks (Topology) Builder Game" id="styledImage">
+                            <figcaption id="imageCaption">Networks Builder Game</figcaption>
+                        </figure>
+                        <br>
 
-        <h4>Conclusion</h4>
+                        <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/revision-minesweeper">Computer Science (OCR) Revision Minesweeper - Game</a></h3>
+                        <p>For the pupils who enjoy playing games, this game features OCR multiple choice questions built into the traditional game of minesweeper. Questions are asked for each square revealed and as a 'save yourself from losing' last chance.</p>
 
-        <p>This is the best use of AI models in teaching, in my opinion. Taking an idea we have and want to show to our pupils, and making it a reality, quickly and easily. To build this ourselves would take far too long, alongside the normal teacher workload, so this speeds up creating more interactive and engaging lessons. I cannot wait to try this more and take it even further.</p>
-      </div>
-    </div>
-    <div class="fancy-reply-card" onclick="toggleReplyPreview(this)">
-      <div class="reply-card-top">
-        <img src="/Media/more-ai-widgets.png" alt="Preview image for previous post" class="reply-thumbnail" />
-        <div class="reply-top-right">
-          <h3 class="reply-title">↪ Replying to: <a href="web-widgets-with-ai.html">“I built more vital tools using AI.”</a></h3>
-          <p class="reply-date">Wednesday 28th May 2025</p>
-          <div class="reply-preview-text-wrapper">
-            <p class="reply-preview-text">
-              I've discussed more of my web widgets created using AI, filled with a variety of different tools, that can all be found on my website.
-            </p>
-            <div class="fadeout-overlay"></div>
-          </div>
-        </div>
-      </div>
+                        <figure>
+                            <img src="/Media/More-Web-Widgets-Screenshots/Minesweeper.webp" alt="Screenshot of Computer Science Revision Minesweeper Game" id="styledImage2">
+                            <figcaption id="imageCaption2">Revision Minesweeper</figcaption>
+                        </figure>
+                        <br>
 
-      <div class="reply-full-content">
-        <p>
-          Since my last post about using AI to build interactive webpages to help teaching, I've experimented with creating even more resources that I wish to detail here for your own use. These were built using Canva Code, by far the best solution for creating these interactive pages, at present.
-        </p>
+                        <h3 class="text-blue">HTML Drag-and-Drop Block-Based Editor - Version 2</h3>
+                        <p>(<a id="link-alt" class="highlight highlight-cyan" href="https://lga-resources.my.canva.site/html-with-blocks">original</a> / <a id="link-alt" class="highlight highlight-cyan" href="https://lga-resources.my.canva.site/drag-and-drop-html-code-editor">alternative</a>)</p>
+                        <p>The same tool (a drag-and-drop editor for HTML) in two different versions. When building this refined version of my earlier Claude widget, I tried two different approaches that led to different user interfaces of the same toolset.</p>
 
-        <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/interactive-network-building">Networks (Topology) Builder - Game</a></h3>
-        <p>A game that invites users to connect components together to create different networks. The later levels focus on Network Topologies such as Star, Bus, Ring, etc.). A great visual tool for understanding how networks can be arranged.</p>
+                        <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/cipher-visualiser">Ciphers (Encryption/Decryption) Visualiser</a></h3>
+                        <p>A helpful webpage for encrypting and decrypting messages to teach pupils about <span class="glossary-term">Cipher</span>s and network security <span class="glossary-term">Encryption</span>. The Caesar Cipher is the main focus with other more complex ciphers also available.</p>
 
-        <figure>
-          <img src="/Media/More-Web-Widgets-Screenshots/Networks Builder.webp" alt="Screenshot of Networks (Topology) Builder Game" id="styledImage">
-          <figcaption id="imageCaption"></figcaption>
-        </figure>
-        <br>
+                        <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/number-system-converter">Number System Explorer</a></h3>
+                        <p>Calling back to my first test on that Teach First Training Day, this is a more refined converter between different number systems, including <span class="glossary-term">Binary</span>, <span class="glossary-term">Hexadecimal</span>, octal, and Base64. This fits well into a lesson / unit on data representation.</p>
 
-        <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/revision-minesweeper">Computer Science (OCR) Revision Minesweeper - Game</a></h3>
-        <p>For the pupils who enjoy playing games, this game features OCR multiple choice questions built into the traditional game of minesweeper. Questions are asked for each square revealed and as a 'save yourself from losing' last chance.</p>
+                        <h2>Final Comments</h2>
+                        <p>I've learnt even more about developing these interactive webpages using Canva Code. Feel free to use and experiment with these tools (or similar) and please share your own experiences with me.</p>
+                    </div>
+                </div>
 
-        <figure>
-          <img src="/Media/More-Web-Widgets-Screenshots/Minesweeper.webp" alt="Screenshot of Computer Science Revision Minesweeper Game" id="styledImage2">
-          <figcaption id="imageCaption2"></figcaption>
-        </figure>
-        <br>
+                <p>This is the third in a trilogy of posts about using AI to build web apps, to use as resources in the classroom. My previous creations and experiments have been incredibly varied, whilst today will remain focused on the idea of building educational games, how gamification can help a classroom and how Canva can be used to build these resources.</p>
 
-        <h3 class="text-blue">HTML Drag-and-Drop Block-Based Editor - Version 2</h3>
-        (<a id="link-alt" class="highlight highlight-cyan" href="https://lga-resources.my.canva.site/html-with-blocks">original</a> / <a id="link-alt" class="highlight highlight-cyan" href="https://lga-resources.my.canva.site/drag-and-drop-html-code-editor">alternative</a>)
-        <p>The same tool (a drag-and-drop editor for HTML) in two different versions. When building this refined version of my earlier Claude widget, I tried two different approaches that led to different user interfaces of the same toolset.</p>
+                <h2>Introduction</h2>
+                <p>Earlier this year, I began building resources to aid with teaching, mainly simulators and demonstrations to act as a visual representation of more abstract concepts that could be shared with pupils for them to refer back to. However, occasionally I would attempt to build a type of game for the pupils to use as a revision exercise, usually based around answering questions. A good example of this is my <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/revision-minesweeper">OCR GCSE Minesweeper Game</a> which acted as an additional method of knowledge revision, but in a fun and interactive way.</p>
 
-        <figure>
-          <img src="/Media/More-Web-Widgets-Screenshots/HTML_2.webp" alt="Screenshot of (Orginal) HTML Drag-and-Drop Block-Based Editor" id="styledImage3">
-          <figcaption id="imageCaption3"></figcaption>
-        </figure>
+                <p>There is a strong need for gamified elements within the classrooms. It feels like almost every lesson, pupils ask to play a Blooket quiz or they ask if they can play games. After making the <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/revision-minesweeper">GCSE Minesweeper Game</a>, I had an idea to try incorporating games that the pupils like, but with educational elements. And as seen with the Minesweeper Game, AI seemed like the quickest way to go, without putting more workload onto an already busy year. That’s where <span class="glossary-term">CanvaCode</span> enters the story. A tool that let me turn my lesson content into full-on playable games.</p>
 
-        <figure>
-          <img src="/Media/More-Web-Widgets-Screenshots/HTML_1.webp" alt="Screenshot of (Alternative) HTML Drag-and-Drop Block-Based Editor" id="styledImage4">
-          <figcaption id="imageCaption4"></figcaption>
-        </figure>
-        <br>
+                <h2>Gamification</h2>
+                <p>Gamification refers to taking lesson activities and introduce ‘game’ mechanics to make the lessons more engaging for pupils. Some of the advantages of gamification include:</p>
+                <ul>
+                    <li>Increased engagement with pupils</li>
+                    <li>Retention through repetition</li>
+                    <li>Motivation via competition and/or rewards</li>
+                    <li>Natural <span class="glossary-term">Differentiation</span></li>
+                </ul>
+                <p>One way that this can be done by using existing activities and introducing a scoring system and leaderboard. This promotes healthy competition between pupils in the class, and a reward can be offered later.</p>
 
-        <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/cipher-visualiser">Ciphers (Encryption/Decryption) Visualiser</a></h3>
-        <p>A helpful webpage for encrypting and decrypting messages to teach pupils about ciphers and network security encryption. The Caesar Cipher is the main focus with other more complex ciphers also available.</p>
+                <h2>Enter Canva Code!</h2>
+                <p>With this growing interest in gamification, I began to explore which tools could help me bring these ideas to life easily… Which is where Canva Code came into play.</p>
+                
+                <h2>The Game Development Process</h2>
+                <p>I started simple, with a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/interactive-sketchup-games">Matching Game</a> where pupils 1) match up the tool with its description and 2) match up a scenario with what tool you would use.</p>
 
-        <figure>
-          <img src="/Media/More-Web-Widgets-Screenshots/Encryption.webp" alt="Screenshot of Encryption/Decryption Visualiser" id="styledImage5">
-          <figcaption id="imageCaption5"></figcaption>
-        </figure>
-        <br>
-
-        <h3><a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/number-system-converter">Number System Explorer</a></h3>
-        <p>Calling back to my first test on that Teach First Training Day, this is a more refined converter between different number systems, including binary, hexadecimal, octal, and Base64. This fits well into a lesson / unit on data representation. The Base64 representation can be compared to YouTube url's (video IDs).</p>
-
-        <figure>
-          <img src="/Media/More-Web-Widgets-Screenshots/Data_Representation.webp" alt="Screenshot of Number Systems Explorer" id="styledImage6">
-          <figcaption id="imageCaption6"></figcaption>
-        </figure>
-        <br>
-
-        <h2>Final Comments</h2>
-        <p>
-          I've learnt even more about developing these interactive webpages using Canva Code. Feel free to use and experiment with these tools (or similar) and please share your own experiences with me.</p>
-        <p>I have now begun looking at how this can be used by other subjects outside of Computing / Computing Science. I've already tried some widgets Science, Mathematics and English that perhaps I will write about sometime soon. Needless to say, there is definitely more experimentation to be done.
-        </p>
-
-        <p>A webpage containing all my resources can be found at <a id="link-alt" class="highlight highlight-blue" href="http://resources.thetommyverse.com">resources.thetommyverse.com</a></p>
-      </div>
-    </div>
-
-
-    <p>This is the third in a trilogy of posts about using AI to build web apps, to use as resources in the classroom. My previous creations and experiments have been incredibly varied, whilst today will remain focused on the idea of building educational games, how gamification can help a classroom and how Canva can be used to build these resources.</p>
-
-    <h2>Introduction</h2>
-    <p>Earlier this year, I began building resources to aid with teaching, mainly simulators and demonstrations to act as a visual representation of more abstract concepts that could be shared with pupils for them to refer back to. However, occasionally I would attempt to build a type of game for the pupils to use as a revision exercise, usually based around answering questions. A good example of this is my <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/revision-minesweeper">OCR GCSE Minesweeper Game</a> which acted as an additional method of knowledge revision, but in a fun and interactive way.</p>
-
-    <p>There is a strong need for gamified elements within the classrooms. It feels like almost every lesson, pupils ask to play a Blooket quiz or they ask if they can play games. After making the <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/revision-minesweeper">GCSE Minesweeper Game</a>, I had an idea to try incorporating games that the pupils like, but with educational elements. And as seen with the Minesweeper Game, AI seemed like the quickest way to go, without putting more workload onto an already busy year. That’s where Canva Code enters the story. A tool that let me turn my lesson content into full-on playable games.</p>
-
-    <h2>Gamification</h2>
-
-    <p>Gamification refers to taking lesson activities and introduce ‘game’ mechanics to make the lessons more engaging for pupils. Some of the advantages of gamification include:</p>
-
-    <ul>
-    <li>Increased engagement with pupils</li>
-      <li>Retention through repetition</li>
-    <li>Motivation via competition and/or rewards</li>
-    <li>Natural differentiation</li>
-    </ul>
-    <p>One way that this can be done by using existing activities and introducing a scoring system and leaderboard. This promotes healthy competition between pupils in the class, and a reward can be offered later.</p>
-
-    <p>Another way is to play a game that features educational elements. A great example of this is <a id="link-alt" class="highlight highlight-grey" href="https://www.blooket.com/">Blooket</a>, a quiz that implements game modes to make answering questions and revising content more fun for pupils. I’d tried a few of these techniques to try and make my lessons more engaging but to be honest, I wanted to try something more.</p>
-
-    <h2>Enter Canva Code!</h2>
-
-    <p>With this growing interest in gamification, I began to explore which tools could help me bring these ideas to life easily… Which is where Canva Code came into play.</p>
-
-    <p>I had started using Canva Code, following my experiments with Claude Artefacts, ChatGPT Canvas, and most recently Gemini’s Apps. Despite my experiments with these other models, I still found Canva Code to be the most useful to use for making these tools, and began using it for most of these tasks following the Canva Create event earlier in the year and the early access preview.</p>
-
-    <p>My reasons were because Canva provided the most stylised and comprehensive apps. It rarely struggled to create the things I asked, even if sometimes it went in the wrong direction. It didn’t seem to have a limit on how much it can do, with some of my apps reaching a code length of over 1700 lines of code. Other models had limits in how many versions of an app can be created without starting a new chat, or had a limit to how much code could be generated.</p>
-
-    <p>Whilst writing this, I did wish to address a problem I have encountered with Canva Code, where sometimes the code stops randomly and the app that’s created is missing some key javascript elements meaning buttons and interactable elements no longer work. I am yet to see a fix for this and it is holding back an exciting idea I’ve had for this technology, but I am hopeful for Canva to identify and remove the bug.</p>
-
-    <h2>The Game Development Process</h2>
-
-    <p>The next stage was to identify some games to build. I had initially created minesweeper due to a pupil in the class’ fascination with the game, and thought it would be a rewarding revision approach for them. Building games for lots of pupils to play had to be approached differently.</p>
-
-    <p>This idea coincided with our schools unit of using SketchUp, across all KS3 year groups. This meant I could hinge the knowledge content of the games, on SketchUp tools and how they worked.</p>
-
-    <p>I started simple, with a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/interactive-sketchup-games">Matching Game</a> where pupils 1) match up the tool with its description and 2) match up a scenario with what tool you would use.</p>
-
-    <figure>
-      <img src="/Media/Gammification%20-%20Screenshots/matching.png" alt="Screenshot of SketchUp Matching Game" id="styledImage7">
-      <figcaption id="imageCaption7"></figcaption>
-    </figure>
-
-      <p>I also created a simple <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/sketchup-modelling-challenge">‘Ordering’ Game</a> where the players are presented with different models and steps to complete them, and they have to put them in the right order. I never ended up using this, but it was an interesting result nonetheless and is available on my resources page.</p>
-
-    <figure>
-      <img src="/Media/Gammification%20-%20Screenshots/ordering.png" alt="Screenshot of 'Ordering' SketchUp Scenarios Game" id="styledImage8">
-      <figcaption id="imageCaption8"></figcaption>
-    </figure>
-
-        <p>After I had gained a little bit of confidence that my ideas could be realised using the capabilities of Canva Code, I decided to push the limit a bit further and build full-on games. I turned to classic arcade games for inspiration (like I had done with Minesweeper) and built my first true “Game”: <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/interactive-sketchup-snake-activity">The SketchUp Tools Snake Game</a>. Players had to eat the correct fruits that matched the description given of a SketchUp tool. It took quite a few back and forths and refinements to get it how I pictured it in my head, but I was amazed with the results.</p>
-
-    <figure>
-      <img src="/Media/Gammification%20-%20Screenshots/snake.png" alt="Screenshot of SketchUp Snake Game" id="styledImage9">
-      <figcaption id="imageCaption9"></figcaption>
-    </figure>
-
-          <p>Feeling inspired, I built two more SketchUp themed games. One was a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/sketchup-tools-driving-activity">Driving Game</a> <span class="text-grey">(secretly inspired by the Hoth scene of The Empire Strikes Back)</span> where players drive around a map to ‘grapple’ tools to then drive over and match them up with their descriptions. This was immensely more complex, it had three levels, with many tools and descriptions. It had a time limited booster to go faster, a minimap in the corner that updated as the players drove around, a scrolling grid (play area) and when complete, showed the players how long they had taken to complete the game. As there wasn’t a way to ‘lose’ the game, the timer would serve as the high-score / competitive aspect. I decided that this would be a feature I would try to bring into all these games, where appropriate.</p>
-
-    <figure>
-      <img src="/Media/Gammification%20-%20Screenshots/driving.png" alt="Screenshot of SketchUp Driving Game" id="styledImage10">
-      <figcaption id="imageCaption10"></figcaption>
-    </figure>
-
-            <p>The final SketchUp game was a version of the classic game ‘Geometry Dash’: <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/sketchup-dash-activity">SketchUp Dash</a>. Players would navigate infinitely generating terrain, avoiding obstacles and answering SketchUp questions. If they hit an obstacle, fall off, or get a question wrong, they have to restart. Their number of attempts is tracked, as well as their score, which increases every time they answer a question or move a certain amount. I was amazed that this worked as a concept.</p>
-
-    <figure>
-      <img src="/Media/Gammification%20-%20Screenshots/dash.png" alt="Screenshot of SketchUp Dash Game" id="styledImage11">
-      <figcaption id="imageCaption11"></figcaption>
-    </figure>
-
-              <p>To ensure I was experimenting effectively, I also built two games that weren’t SketchUp themed. The first, a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/html-tags-fruit-ninja">HTML tags inspired Fruit Ninja game</a>, where the players have to destroy the correct HTML tag (fruit) and avoid the incorrect ones / bombs. The second, a <a id="link-alt" class="highlight highlight-blue" href="https://lga-resources.my.canva.site/binary-pacman">Binary Conversions inspired version of pacman</a>, where the player has to eat fruit that represent 1s and 0s to create the correct binary number, for the denary number given. This was complete with ghosts to avoid and extra parts to eat to earn extra points.</p>
-
-    <figure>
-      <img src="/Media/Gammification%20-%20Screenshots/fruit%20ninja.png" alt="Screenshot of SketchUp Dash Game" id="styledImage12">
-      <figcaption id="imageCaption12"></figcaption>
-    </figure>
-
-    <figure>
-      <img src="/Media/Gammification%20-%20Screenshots/pacman.png" alt="Screenshot of SketchUp Dash Game" id="styledImage13">
-      <figcaption id="imageCaption13"></figcaption>
-    </figure>
+                <figure>
+                    <img src="/Media/Gammification%20-%20Screenshots/matching.png" alt="Screenshot of SketchUp Matching Game" id="styledImage7">
+                    <figcaption id="imageCaption7">SketchUp Matching Game</figcaption>
+                </figure>
 
                 <h3>Prompting</h3>
                 <p>Throughout all of this process, I refined my ‘core prompting phrases’ to control and guide the output towards a desired output. Here are a few of the tricks I learnt to get better control and better outputs over the Canva Code generations.</p>
 
                 <ol>
-                <li>As these games rely on the educational aspect for use in the classroom, I needed to ensure that the information was correct. Before getting Canva Code to generate any code, I asked it to detail what the game would be like and what the educational questions / answers would be. This allowed me to check for hallucinations.
-                  <!-- TODO  Prompt -->
-                <p class="ai-prompt" style="font-size:100%;">Before you generate any code, I would like you to describe the features of the game in detail, and show me what educational question/answers you are going to use</p>
-
-                Using this method, I was able to tackle misconceptions in the design of the game, and any knowledge hallucinations that may arise before the ‘coding’ process began.</li>
-
-                  <br>
-
-                <li>After the initial generation of the game, the next steps for refinements and improvements through play testing. Typically, the initial results were very simplified, so (after all the gameplay mechanics had been tested), I would ask Canva Code to
-                  <p class="ai-prompt" style="font-size:100%;">improve the style to make it more modern, incorporating clear colours, clear text, clear graphics and animations</p>. This process led to the very aesthetic designs that you can see in the finished versions.</li>
-                  <br>
-                <li>An early problem encountered with these gamified activities, was the concept of the ‘Game’ itself. My school, and I’m sure others, use a kind of automated system to block games. This included a few of my gamified activities. To contract this, the last iteration was to <p class="ai-prompt" style="font-size:100%;">remove all references to 'game' from the code / webpage, and replace it with 'activity' if needed'</p> This method was enough to allow these websites to pass the content-filtering and be used within the classroom. This method proved easier than getting the IT department to approve each individual ‘game’.</li>
+                    <li>As these games rely on the educational aspect for use in the classroom, I needed to ensure that the information was correct. Before getting Canva Code to generate any code, I asked it to detail what the game would be like and what the educational questions / answers would be. This allowed me to check for <span class="glossary-term">Hallucination</span>s.
+                        <div class="ai-prompt">Before you generate any code, I would like you to describe the features of the game in detail, and show me what educational question/answers you are going to use</div>
+                    </li>
+                    <br>
+                    <li>After the initial generation of the game, the next steps for refinements and improvements through play testing. Typically, the initial results were very simplified, so (after all the gameplay mechanics had been tested), I would ask Canva Code to:
+                        <div class="ai-prompt">improve the style to make it more modern, incorporating clear colours, clear text, clear graphics and animations</div>.
+                    </li>
                 </ol>
-                <h2>In the Classroom</h2>
-
-                <p>These games had positive reception from pupils across different classes and year groups. Typically used as a starter or exit activity to reflect on learning, pupils found these to be an engaging method of learning. Many pupils requested more games and even had their own suggestions for ideas.</p>
-
-                <p>Some pupils were distracted and decided to play an unblocked version of the original games they were based on (i.e. snake or geometry dash). However, most pupils loved playing the games and getting them to stop playing them to focus on the next activity proved the biggest challenge.</p>
-
-                <p>In one class, I presented pupils with the option of two games (the Driving game and SketchUp Dash) and saw that there was a very even split with some pupils choosing the slower and more considered Driving game and some choosing the faster paced SketchUp Dash. I think this is a sign that both of these game were fun for pupils to play.</p>
 
                 <h2>Reflections</h2>
+                <p>One of the unexpected strengths of these games was how naturally they supported <span class="glossary-term">Differentiation</span>. Due to the level-based and self-paced nature of these games, pupils could progress at their own speeds. The visual and interactive nature of the games supported a broader range of learning styles, removing the sometimes text-heavy approaches of traditional worksheets. Pupils with <span class="glossary-term">SEND</span> responded well to the gamified elements and it led to some really great lessons for them.</p>
 
-                <p>The integration of these games was designed to make the learning more meaningful, accessible, and fun for the pupils. These games weren’t just distractions or addons. They got pupils thinking about the tools that they would need to be using for an independent task, or let them revise content from a previous week.</p>
+                <p>A webpage containing all my resources can be found at <a id="link-alt" class="highlight highlight-blue" href="http://resources.thetommyverse.com">resources.thetommyverse.com</a></p>
 
-                <p>One of the unexpected strengths of these games was how naturally they supported differentiation. Due to the level-based and self-paced nature of these games, pupils could progress at their own speeds. Some games had helpful hints or varying game modes to go alongside these. Pupils could explore the games at their own leisure whilst other pupils could speedrun through for the most points or the best time.</p>
+            </section>
 
-                <p>The visual and interactive nature of the games supported a broader range of learning styles, removing the sometimes text-heavy approaches of traditional worksheets. Pupils with SEND responded well to the gamified elements and it led to some really great lessons for them.</p>
+            <footer class="blog-nav-footer">
+                <button class="btn" onclick="location.href='index.html';">Back to blog</button>
+            </footer>
 
-                <h2>Lessons Learned & Tips</h2>
+        </article>
+    </div>
 
-                <p>I learned a lot throughout this process, about what works and what doesn’t. Whilst Canva Code is an incredibly powerful tool, there are some limitations in what it can do. So here are some helpful tips if any of you want to try this yourselves.</p>
-                <ol>
-                <li>Have a clear idea of what you want to make. <br>Decide on your game, decide how the educational aspect is going integrate with the game, and write a clear description of this within the prompt.</li>
-                  <br>
-                <li>Check for any hallucinations. <br>AI can make mistakes and use misinformation that can ruin the purpose of these tools. Ask the AI before it starts writing the game to tell you the educational information so that you can fact check it.</li> <br>
-                <li>Playtest the Game. <br>I used one of these games in a lesson before I had completely playtested it for bugs, and there were some. Bugs are not understood well by pupils, and can ruin the enjoyment of a gamified activity. As with any code project, it needs to be checked and refined to iron out these bugs.</li>
-                  <br>
-                <li>Worry about styling after the mechanics.<br> As much as we want the game to look good, the mechanics and functionality of the game is far more important. Get a working game with all the features you want and then ask Canva Code to make it look nicer.</li>
-                </ol>
-                <h2>Conclusion</h2>
-
-                <p>I plan to continue building games in a variety of different topics, but try to make them more complex. I’ve tried simple physics simulations, and complex movement mechanics, but I wonder whether simple AI is possible or perhaps longer more detailed games.</p>
-
-                <p>These tools have genuinely transformed my these parts of my lessons, and I am excited to keep pushing the boundaries.</p>
-
-                <p>I encourage people to try this for themselves, as Canva (and Canva Code) is free for educators. If you make anything, please share it with me as I would love to see them.</p>
-
-
-    <p>A webpage containing all my resources can be found at <a id="link-alt" class="highlight highlight-blue" href="http://resources.thetommyverse.com">resources.thetommyverse.com</a></p>
-
-    <footer>
-      <p>
-        <button onclick="location.href='https://tommysthoughts.thetommyverse.com';">Back to blog</button>
-      </p>
-    </footer>
-  </div>
-</div>
+    <script src="glossary.js"></script>
+    <script>
+        function toggleReplyPreview(card) {
+            card.classList.toggle('expanded');
+        }
+    </script>
 </body>
-
-<script src="glossary.js"></script>
-
-<script>
-  function toggleReplyPreview(card) {
-    card.classList.toggle('expanded');
-  }
-
-    // Automatically set figcaption from the alt attribute
-    document.getElementById('imageCaption').innerText = document.getElementById('styledImage').alt;
-    document.getElementById('imageCaption2').innerText = document.getElementById('styledImage2').alt;
-  document.getElementById('imageCaption3').innerText = document.getElementById('styledImage3').alt;
-  document.getElementById('imageCaption4').innerText = document.getElementById('styledImage4').alt;
-  document.getElementById('imageCaption5').innerText = document.getElementById('styledImage5').alt;
-  document.getElementById('imageCaption6').innerText = document.getElementById('styledImage6').alt;
-  document.getElementById('imageCaption7').innerText = document.getElementById('styledImage7').alt;
-  document.getElementById('imageCaption8').innerText = document.getElementById('styledImage8').alt;
-  document.getElementById('imageCaption9').innerText = document.getElementById('styledImage9').alt;
-  document.getElementById('imageCaption10').innerText = document.getElementById('styledImage10').alt;
-  document.getElementById('imageCaption11').innerText = document.getElementById('styledImage11').alt;
-  document.getElementById('imageCaption12').innerText = document.getElementById('styledImage12').alt;
-  document.getElementById('imageCaption13').innerText = document.getElementById('styledImage13').alt;
-</script>
-
 </html>

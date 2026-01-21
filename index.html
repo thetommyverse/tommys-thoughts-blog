@@ -1,712 +1,319 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Tommy's Thoughts – A Blog by Tommy Hills</title>
 
-    <meta name="description" content="Dive into Tommy’s Thoughts. A personal blog exploring creativity, technology, AI, comedy, and more. Fresh ideas and experiments from STEM communicator and comedian Tommy Hills.">
-    <meta name="keywords" content="Tommy Hills, blog, Tommy's Thoughts, AI, technology, comedy, creativity, STEM, science communication, education, digital experiments, performance art">
+    <meta name="description" content="Dive into Tommy’s Thoughts. A personal blog exploring creativity, technology, AI, comedy, and more.">
+    <meta name="keywords" content="Tommy Hills, blog, AI, technology, comedy, creativity, STEM">
     <meta name="author" content="Tommy Hills">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tommysthoughts.thetommyverse.com/">
     <meta property="og:title" content="Tommy's Thoughts – A Blog by Tommy Hills">
-    <meta property="og:description" content="Explore thoughts, ideas, and experiments in technology, comedy, and creativity from STEM communicator and performer Tommy Hills.">
-    <!-- TODO <meta property="og:image" content="https://tommysthoughts.thetommyverse.com/images/blog-og.jpg"> -->
+    <meta property="og:description" content="Explore thoughts, ideas, and experiments in technology, comedy, and creativity.">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://tommysthoughts.thetommyverse.com/">
     <meta name="twitter:title" content="Tommy's Thoughts – A Blog by Tommy Hills">
-    <meta name="twitter:description" content="Explore thoughts, ideas, and experiments in technology, comedy, and creativity from STEM communicator and performer Tommy Hills.">
-    <!-- TODO <meta name="twitter:image" content="https://tommysthoughts.thetommyverse.com/images/blog-og.jpg"> -->
+    <meta name="twitter:description" content="Explore thoughts, ideas, and experiments in technology, comedy, and creativity.">
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
-
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="/blog.css" type="text/css">
-    <link rel="stylesheet" href="blog-grid.css" type="text/css">
 
-    <!-- Font Awesome Kit -->
+    <link rel="stylesheet" href="blog.css" type="text/css">
+
     <script src="https://kit.fontawesome.com/173f107a50.js" crossorigin="anonymous" defer></script>
-    <style>
-        .filterDiv {
-            display: none; /* Hidden by default */
-        }
-
-        .show {
-            display: block;
-        }
-
-        /* Footer Styles */
-        footer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background-color: #222;
-            color: #fff;
-            width: 100%;
-        }
-
-        .about-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 900px;
-            background: #333;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            transition: max-width 2s ease;
-            margin-bottom: 20px;
-        }
-
-        .about-card img {
-            width: 100%;
-            height: 250px; /* Set a fixed height so it doesn't shrink */
-            object-fit: cover; /* Ensures the image fills the space by cropping */
-        }
-
-        .about-text {
-            padding: 20px;
-        }
-
-        @media (min-width: 600px) {
-            .about-card {
-                flex-direction: row;
-                text-align: left;
-                width: 90%;
-                height: 300px; /* Ensures the image has a consistent height */
-            }
-
-            .about-card img {
-                width: 40%;
-                height: 100%; /* Makes sure it fills the height */
-                object-fit: cover; /* Crops the image rather than shrinking */
-            }
-
-            .about-text {
-                width: 60%;
-                padding: 20px;
-            }
-        }
-
-        /* Banner styling */
-        .banner {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .banner-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            animation: fadeInScale 1s ease-out forwards;
-            animation-delay: 0.2s;
-            opacity: 0; /* Start hidden */
-        }
-
-        /* Button inside banner */
-        .buy-button {
-            position: absolute;
-            bottom: 7.5%;
-            left: 76%;
-            transform: translateX(-50%);
-            padding: 5px 10px 5px 10px;
-            font-size: 1rem;
-            border-radius: 8px;
-            white-space: nowrap;
-            background-color: var(--lightpurple);
-            color: white;
-            text-decoration: none;
-            /* Animation */
-            animation: fadeInUp 1s ease-out forwards;
-            animation-delay: 1s;
-            opacity: 0; /* Start hidden */
-        }
-
-        .buy-button:hover {
-            background-color: var(--mainpurple);
-        }
-
-        /* Keyframes for image and button */
-        @keyframes fadeInScale {
-            0% {
-                opacity: 0;
-                transform: scale(1.05);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, 30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translate(-50%, 0);
-            }
-        }
-
-
-        #filterSearchContainer {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-direction: column; /* ADD THIS LINE */
-        }
-
-        #myBtnContainer {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center; /* ADD THIS LINE */
-        }
-
-        #searchBar {
-            padding: 10px 15px;
-            border-radius: 20px;
-            border: 1px solid var(--maingrey);
-            background-color: #fff;
-            color: var(--mainblack);
-            font-size: 1rem;
-            min-width: 200px;
-            margin: 0 auto;     /* ADD THIS LINE */
-            width: 100%;         /* ADD THIS LINE */
-            max-width: 500px;    /* ADD THIS LINE */
-        }
-
-
-        #myBtnContainer .btn {
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-
-        #myBtnContainer .btn:hover {
-            transform: scale(1.05);
-        }
-
-        #myBtnContainer .btn.active {
-        }
-
-        /* 🔽 Responsive layout for smaller screens */
-        @media (max-width: 700px) {
-            #myBtnContainer {
-                flex-direction: column;
-                align-items: stretch;
-                width: 100%;
-            }
-
-            #myBtnContainer .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-
-        /* Styles for the sidebar of updates */
-        /* 1. The Flexbox Container */
-        .w3-content > .homepage-layout {
-            display: flex;
-            flex-direction: row;
-            gap: 24px;
-        }
-
-        /* 2. The Main Content Column */
-        /* We set this to take up 3 parts of the space */
-        .homepage-layout > .blog-feed {
-            flex: 3;
-            /* This is a magic fix for flex items that won't shrink */
-            min-width: 0;
-        }
-
-        /* 3. The Sidebar Column */
-        /* We set this to take up 1 part of the space */
-        .homepage-layout > .updates-feed {
-            flex: 1;
-            min-width: 0;
-        }
-
-
-        /* 4. The Responsive Stacking */
-        @media (max-width: 700px) {
-            .w3-content > .homepage-layout {
-                /* On small screens, stack them vertically */
-                flex-direction: column;
-            }
-        }
-
-        .updates-feed h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            text-align: center;
-            color: #222;
-            margin-bottom: 20px;
-        }
-
-        /* 2. New Update Card Style */
-        .update-card {
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 16px;
-            margin-bottom: 16px;
-        }
-
-        .update-card h3 {
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin: 0 0 4px 0;
-            text-align: center;
-        }
-
-        .update-card .date {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-
-        /* 3. Expandable Content */
-        .update-content {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 60%; /* Matches your blog <p> style */
-            max-height: 100px; /* This hides the overflow */
-            overflow: hidden;
-            position: relative;
-            transition: max-height 0.4s ease-out;
-        }
-
-        /* This class is added by JS */
-        .update-content.expanded {
-            max-height: 5000px; /* Increased height for very long posts */
-        }
-
-        .expand-btn {
-            background: none;
-            border: none;
-            color: var(--mainpurple);
-            font-weight: bold;
-            cursor: pointer;
-            padding: 4px 0;
-            margin-top: 10px;
-        }
-
-        .expand-btn:hover {
-            text-decoration: underline;
-        }
-
-        /* 4. Mobile Stacking (Q4) */
-        @media (max-width: 900px) {
-            .homepage-layout {
-                grid-template-columns: 1fr; /* Stacks to a single column */
-            }
-
-            .updates-feed {
-                margin-top: 40px; /* Add space when it stacks */
-            }
-        }
-
-        /* Style for the 'Show more updates' button */
-        .show-more-btn {
-            width: 100%;
-            padding: 12px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: var(--mainpurple); /* Uses your existing purple */
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .show-more-btn:hover {
-            background-color: var(--lightpurple); /* Uses your existing light purple */
-        }
-    </style>
 </head>
-<body style="margin-top: 15px;">
 
-<!-- <button onclick="location.href='https://thetommyverse.com';" id="exit-button"
-        style="position: absolute; top: 10px; left: 10px; padding: 10px 20px; border: none; border-radius: 100px; cursor: pointer;">
-    Back
-</button>-->
+<body class="index-body">
 
-<div class="w3-content" style="max-width:1400px">
+    <div class="w3-content main-content-wrapper">
 
-    <!-- Header -->
-    <header class="w3-container w3-center w3-padding-32">
-        <h1><b>Tommy's Thoughts</b></h1>
-        <p class="main-page" style="text-align: center;">Welcome to the blog of <span class="highlight highlight-grey">Tommy Hills</span></p>
+        <header class="w3-container w3-center w3-padding-32">
+            <h1><b>Tommy's Thoughts</b></h1>
+            <p class="main-page header-welcome">Welcome to the blog of <span class="highlight highlight-grey">Tommy Hills</span></p>
+        </header>
 
+        <div class="homepage-layout">
 
-    </header>
+            <main class="blog-feed">
 
-    <div class="homepage-layout">
-        <main class = "blog-feed">
+                <div class="w3-container">
+                    <div id="filterSearchContainer">
+                        <div id="myBtnContainer">
+                            <button class="btn active" onclick="applyFilters('all')">Show all</button>
+                            <button class="btn" onclick="applyFilters('programming')">Programming</button>
+                            <button class="btn" onclick="applyFilters('discussion')">Discussion</button>
+                            <button class="btn" onclick="applyFilters('ai')">Artificial Intelligence</button>
+                            <button class="btn" onclick="applyFilters('teaching')">Teaching</button>
+                            <button class="btn" onclick="applyFilters('experiment')">Experiments</button>
+                        </div>
+                        <input type="text" id="searchBar" placeholder="Search blog titles..." onkeyup="applyFilters()" />
+                    </div>
+                </div>
 
-    <div class="w3-container">
-        <div id="filterSearchContainer">
-            <div id="myBtnContainer">
-                <button class="btn active" onclick="applyFilters('all')">Show all</button>
-                <button class="btn" onclick="applyFilters('programming')">Programming</button>
-                <button class="btn" onclick="applyFilters('discussion')">Discussion</button>
-                <button class="btn" onclick="applyFilters('ai')">Artificial Intelligence</button>
-                <button class="btn" onclick="applyFilters('teaching')">Teaching</button>
-                <button class="btn" onclick="applyFilters('experiment')">Experiment</button>
-            </div>
-            <input type="text" id="searchBar" placeholder="Search blog titles..." onkeyup="applyFilters()" />
-        </div>
-    </div>
+                <div class="blog-container">
 
+                    <div class="blog-card filterDiv experiment ai">
+                        <img src="/Media/Barcamp%2024%202.png" alt="Gemini Reframing Experiment">
+                        <div class="blog-content blog-text2">
+                            <h3>I reframed photos using Gemini</h3>
+                            <h4>Date: January 3rd 2026</h4>
+                            <p class="card-desc">An experiment on using Gemini's image generation to reframe old photos of my shows.</p>
+                            <button class="read-more" onclick="location.href='gemini-reframing.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-    <!-- Blog Posts -->
-    <div class="blog-container">
-        <div class="blog-card filterDiv experiment ai">
-            <img src="/Media/Barcamp%2024%202.png" alt="Teach First Logo">
-            <div class="blog-content blog-text2">
-                <h3>I reframed photos using Gemini</h3>
-                <h4>Date: January 3rd 2026</h4>
-                <p style="font-family:Arial;">An experiment on using Gemini's image generation to reframe old photos of my shows.</p>
-                <button class="read-more" onclick="location.href='gemini-reframing.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv teaching ai">
+                        <img src="/Media/fireworks.png" alt="Fireworks">
+                        <div class="blog-content blog-text2">
+                            <h3>Happy New Year 2026!</h3>
+                            <h4>Date: January 1st 2026</h4>
+                            <p class="card-desc">A reflection on the year 2025 and my hopes for 2026.</p>
+                            <button class="read-more" onclick="location.href='2025-reflection.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv teaching ai">
-            <img src="/Media/fireworks.png" alt="Teach First Logo">
-            <div class="blog-content blog-text2">
-                <h3>Happy New Year 2026!</h3>
-                <h4>Date: January 1st 2026</h4>
-                <p style="font-family:Arial;">A reflection on the year 2025 and my hopes for 2026.</p>
-                <button class="read-more" onclick="location.href='2025-reflection.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv teaching">
+                        <img src="/Media/tf-logo.jpg" alt="Teach First Logo">
+                        <div class="blog-content blog-text2">
+                            <h3>A reflection on completing Year 1 of Teach First</h3>
+                            <h4>Date: September 28th 2025</h4>
+                            <p class="card-desc">A reflection on the first year of Teach First and my hopes for Year 2.</p>
+                            <button class="read-more" onclick="location.href='tf-reflection-1-year.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv teaching">
-            <img src="/Media/tf-logo.jpg" alt="Teach First Logo">
-            <div class="blog-content blog-text2">
-                <h3>A reflection on completing Year 1 of Teach First (+ my hopes for Year 2)</h3>
-                <h4>Date: September 28th 2025</h4>
-                <p style="font-family:Arial;">A reflection on the first year of Teach First and my hopes for Year 2.</p>
-                <button class="read-more" onclick="location.href='tf-reflection-1-year.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv ai teaching">
+                        <img src="/Media/Gamification-with-AI.png" alt="Gamification Graphics">
+                        <div class="blog-content blog-text2">
+                            <h3>Turning Lessons into Games: My Journey with Canva Code</h3>
+                            <h4>Date: Monday 21st July 2025</h4>
+                            <p class="card-desc">I used AI to build customisable playable games for pupils to try in the classroom.</p>
+                            <button class="read-more" onclick="location.href='gamification-with-ai.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
+                    <div class="blog-card filterDiv ai teaching">
+                        <img src="/Media/more-ai-widgets.png" alt="AI Widgets">
+                        <div class="blog-content blog-text2">
+                            <h3>I built more vital tools using AI.</h3>
+                            <h4>Date: May 28th 2025</h4>
+                            <p class="card-desc">I used AI again to build more vital teaching tools to use in the classroom.</p>
+                            <button class="read-more" onclick="location.href='more-web-widgets-with-ai.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv ai teaching">
-            <img src="/Media/Gamification-with-AI.png" alt="Action Figure Generations from ChatGPT">
-            <div class="blog-content blog-text2">
-                <h3>Turning Lessons into Games: My Journey with Canva Code and Gamification</h3>
-                <h4>Date: Monday 21st July 2025</h4>
+                    <div class="blog-card filterDiv ai teaching">
+                        <img src="/Media/AI%20Widgets%20Blog%20Post%20Background.png" alt="AI Widgets Background">
+                        <div class="blog-content blog-text2">
+                            <h3>I used AI to build vital tools for teaching.</h3>
+                            <h4>Date: April 27th 2025</h4>
+                            <p class="card-desc">I used AI to build vital teaching tools to use in the classroom.</p>
+                            <button class="read-more" onclick="location.href='web-widgets-with-ai.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-                <p style="font-family:Arial;">I used AI to build customisable playable games for pupils to try in the classroom.</p>
-                <button class="read-more" onclick="location.href='gamification-with-ai.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv">
+                        <img src="/Media/canva-logo.png" alt="Canva Logo">
+                        <div class="blog-content blog-text2">
+                            <h3>My thoughts on Canva Create 2025.</h3>
+                            <h4>Date: April 24th 2025</h4>
+                            <p class="card-desc">I watched Canva's keynote presentation and spent the past two weeks trying the features.</p>
+                            <button class="read-more" onclick="location.href='canva-create.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv ai teaching">
-            <img src="/Media/more-ai-widgets.png" alt="Action Figure Generations from ChatGPT">
-            <div class="blog-content blog-text2">
-                <h3>I built more vital tools using AI.</h3>
-                <h4>Date: May 28th 2025</h4>
-                <p style="font-family:Arial;">I used AI again to build more vital teaching tools to use in the classroom.</p>
-                <button class="read-more" onclick="location.href='more-web-widgets-with-ai.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv ai">
+                        <img src="/Media/ChatGPT-Action-Figure-Generations.png" alt="Action Figure Generations">
+                        <div class="blog-content blog-text2">
+                            <h3>I created this ‘Action Figure’ trend.</h3>
+                            <h4>Date: April 11th 2025</h4>
+                            <p class="card-desc">I tried out the action figure trend using OpenAI's new image generation.</p>
+                            <button class="read-more" onclick="location.href='action-figure-trend.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv ai teaching">
-            <img src="/Media/AI%20Widgets%20Blog%20Post%20Background.png" alt="Action Figure Generations from ChatGPT">
-            <div class="blog-content blog-text2">
-                <h3>I used AI to build vital tools for teaching.</h3>
-                <h4>Date: April 27th 2025</h4>
-                <p style="font-family:Arial;">I used AI to build vital teaching tools to use in the classroom.</p>
-                <button class="read-more" onclick="location.href='web-widgets-with-ai.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv teaching ai">
+                        <img src="/Media/AILA%20Blog%20Post%20Background.png" alt="AILA Background">
+                        <div class="blog-content blog-text2">
+                            <h3>I used AILA to create a lesson.</h3>
+                            <h4>Date: March 24th 2025</h4>
+                            <p class="card-desc">I used Oak National Academy's AILA lesson generator to create a revision lesson.</p>
+                            <button class="read-more" onclick="location.href='aila-review.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv">
-            <img src="/Media/canva-logo.png" alt="Canva Logo">
-            <div class="blog-content blog-text2">
-                <h3>My thoughts on Canva Create 2025.</h3>
-                <h4>Date: April 24th 2025</h4>
-                <p style="font-family:Arial;">I watch Canva's keynote presentation and spent the past two weeks trying the different new features. These are my thoughts.</p>
-                <button class="read-more" onclick="location.href='canva-create.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv teaching">
+                        <img src="/Media/Resources.jpg" alt="Unplugged Resources">
+                        <div class="blog-content blog-text2">
+                            <h3>Unplugged Activities and Logic Gates</h3>
+                            <h4>Date: March 14th 2025</h4>
+                            <p class="card-desc">I tried something different by using an unplugged activity...</p>
+                            <button class="read-more" onclick="location.href='unplugged-activities.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv ai">
-            <img src="/Media/ChatGPT-Action-Figure-Generations.png" alt="Action Figure Generations from ChatGPT">
-            <div class="blog-content blog-text2">
-                <h3>I created this ‘Action Figure’ trend, and I have some thoughts.</h3>
-                <h4>Date: April 11th 2025</h4>
-                <p style="font-family:Arial;">I tried out the action figure trend using OpenAI's new image generation and have summarised my thoughts.</p>
-                <button class="read-more" onclick="location.href='action-figure-trend.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv teaching">
+                        <img src="/Media/tf-logo.jpg" alt="Teach First Logo">
+                        <div class="blog-content blog-text2">
+                            <h3>A reflection on the first 6 months as a Teach First Trainee</h3>
+                            <h4>Date: March 10th 2025</h4>
+                            <p class="card-desc">A reflection on the first six months of Teach First.</p>
+                            <button class="read-more" onclick="location.href='tf-reflection.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv teaching ai">
-            <img src="/Media/AILA%20Blog%20Post%20Background.png" alt="AI-Generated image and Oak logo">
-            <div class="blog-content blog-text2">
-                <h3>I used AILA to create a lesson, and here's what I thought.</h3>
-                <h4>Date: March 24th 2025</h4>
-                <p style="font-family:Arial;">I used Oak National Academy's AILA lesson generator to create a revision lesson, and here's what I thought.</p>
-                <button class="read-more" onclick="location.href='aila-review.html';">READ MORE »</button>
-            </div>
-        </div>
+                    <div class="blog-card filterDiv">
+                        <img src="/Media/black-background.jpg" alt="The Earth from Space">
+                        <div class="blog-content blog-text2">
+                            <h3>Hello, World!</h3>
+                            <h4>Date: January 1st 2025</h4>
+                            <p class="card-desc">Welcome to Tommy's Thoughts. A blog exploring programming, AI, teaching, and more.</p>
+                            <button class="read-more" onclick="location.href='hello-world.html';">READ MORE »</button>
+                        </div>
+                    </div>
 
-        <div class="blog-card filterDiv teaching">
-            <img src="/Media/Resources.jpg" alt="Resources for lesson">
-            <div class="blog-content blog-text2">
-                <h3>Unplugged Activities and Logic Gates</h3>
-                <h4>Date: March 14th 2025</h4>
-                <p style="font-family:Arial;">I tried something different by using an unplugged activity...</p>
-                <button class="read-more" onclick="location.href='unplugged-activities.html';">READ MORE »</button>
-            </div>
-        </div>
+                </div>
+                </main>
 
-        <div class="blog-card filterDiv teaching">
-            <img src="/Media/tf-logo.jpg" alt="Teach First Logo">
-            <div class="blog-content blog-text2">
-                <h3>A reflection on the first 6 months as a Teach First Trainee</h3>
-                <h4>Date: March 10th 2025</h4>
-                <p style="font-family:Arial;">A reflection on the first six months of Teach First.</p>
-                <button class="read-more" onclick="location.href='tf-reflection.html';">READ MORE »</button>
-            </div>
-        </div>
-
-        <div class="blog-card filterDiv">
-            <img src="/Media/black-background.jpg" alt="The Earth from Space">
-            <div class="blog-content blog-text2">
-                <h3>Hello, World!</h3>
-                <h4>Date: January 1st 2025</h4>
-                <p style="font-family:Arial;">Welcome to Tommy's Thoughts. A blog exploring programming, AI, teaching, and more.</p>
-                <button class="read-more" onclick="location.href='hello-world.html';">READ MORE »</button>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- END RIGHT BLOG ENTRIES -->
-
-    <!-- Introduction menu -->
-
-    <!-- TODO Highlights to be implemented later -->
-    <!-- Posts -->
-    <!-- <div class="w3-card w3-margin">
-        <div class="w3-container w3-padding">
-            <h4>Highlights</h4>
-        </div>
-        <ul class="w3-ul w3-hoverable w3-white">
-            <li class="w3-padding-16">
-                <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                <span class="w3-large">Lorem</span><br>
-                <span>Sed mattis nunc</span>
-            </li>
-            <li class="w3-padding-16">
-                <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                <span class="w3-large">Ipsum</span><br>
-                <span>Praes tinci sed</span>
-            </li>
-            <li class="w3-padding-16">
-                <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                <span class="w3-large">Dorum</span><br>
-                <span>Ultricies congue</span>
-            </li>
-            <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-                <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                <span class="w3-large">Mingsum</span><br>
-                <span>Lorem ipsum dipsum</span>
-            </li>
-        </ul>
-    </div>
-    <hr>-->
-
-    <!-- END Introduction Menu -->
-
-    <!-- END GRID -->
-</main><br>
-
-    <aside class="updates-feed">
-        <h2 style="text-align: center;">Updates</h2>
-        <div id="updates-container">
+            <aside class="updates-feed">
+                <h2 class="updates-title">Updates</h2>
+                <div id="updates-container"></div>
+            </aside>
 
         </div>
-    </aside>
-
-<!-- END w3-content -->
-</div>
-
-<footer>
-    <div class="about-card">
-        <img src="/Media/About%20Me%20-%20Profile%20Picture.jpg" alt="Tommy Hills">
-        <div class="about-text">
-            <h3 style="font-size:200%;">Tommy Hills</h3>
-            <h5>Thoughts, musings, projects, and other related materials. Anything and everything can be found here.</h5>
-            <br>
-            <div class="button-group">
-                <button class="footer-button purple-button" onclick="location.href='https://thetommyverse.com';">Find out more on website</button>
-                <button class="footer-button yellow-button" onclick="location.href='https://thetommyverse.notion.site/get-in-touch?pvs=74';">Get in touch!</button>
+        </div>
+    <footer>
+        <div class="about-card">
+            <img src="/Media/About%20Me%20-%20Profile%20Picture.jpg" alt="Tommy Hills">
+            <div class="about-text">
+                <h3 class="about-name">Tommy Hills</h3>
+                <h5>Thoughts, musings, projects, and other related materials. Anything and everything can be found here.</h5>
+                <br>
+                <div class="button-group">
+                    <button class="footer-button purple-button" onclick="location.href='https://thetommyverse.com';">Find out more on website</button>
+                    <button class="footer-button yellow-button" onclick="location.href='https://thetommyverse.notion.site/get-in-touch?pvs=74';">Get in touch!</button>
+                </div>
             </div>
         </div>
+    </footer>
 
-    </div>
+    <script src="updates.json"></script>
 
-</footer>
+    <script>
+        // --- 1. FILTERING & SEARCH LOGIC ---
+        let currentCategory = "all";
 
-<script src="updates.json"></script>
+        function applyFilters(categoryClicked = null) {
+            // Update active state for filter buttons
+            if (categoryClicked !== null) {
+                currentCategory = categoryClicked;
+                const active = document.querySelector("#myBtnContainer .active");
+                if (active) active.classList.remove("active");
+                const btns = document.querySelectorAll("#myBtnContainer .btn");
+                btns.forEach(btn => {
+                    if (btn.textContent.toLowerCase().includes(categoryClicked)) {
+                        btn.classList.add("active");
+                    }
+                });
+            }
 
-</body>
+            // Filter the cards based on Search Input AND Selected Category
+            const input = document.getElementById("searchBar").value.toLowerCase();
+            const cards = document.getElementsByClassName("blog-card");
 
-<script>
-    let currentCategory = "all";
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                const title = card.querySelector("h3").textContent.toLowerCase();
+                const matchesSearch = title.includes(input);
+                const matchesCategory = currentCategory === "all" || card.classList.contains(currentCategory);
 
-    function applyFilters(categoryClicked = null) {
-        if (categoryClicked !== null) {
-            currentCategory = categoryClicked;
-            const active = document.querySelector("#myBtnContainer .active");
-            if (active) active.classList.remove("active");
-            const btns = document.querySelectorAll("#myBtnContainer .btn");
-            btns.forEach(btn => {
-                if (btn.textContent.toLowerCase().includes(categoryClicked)) {
-                    btn.classList.add("active");
+                if (matchesSearch && matchesCategory) {
+                    card.classList.add("show");
+                } else {
+                    card.classList.remove("show");
+                }
+            }
+        }
+
+        // --- 2. UPDATES SIDEBAR LOGIC ---
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize filters on load
+            applyFilters("all");
+
+            // Initialize Updates Feed
+            const container = document.getElementById("updates-container");
+            const UPDATES_TO_SHOW = 5;
+
+            // Event Delegation for Update Buttons ("Read more" and "Show more")
+            container.addEventListener("click", function(e) {
+                // Expand/Collapse individual updates
+                if (e.target.classList.contains("expand-btn")) {
+                    const content = e.target.previousElementSibling;
+                    if (content && content.classList.contains("update-content")) {
+                        content.classList.toggle("expanded");
+                        e.target.textContent = content.classList.contains("expanded") ? "Read less" : "Read more";
+                    }
+                }
+
+                // Load more updates button logic
+                if (e.target.classList.contains("show-more-btn")) {
+                    const button = e.target;
+                    const remainingUpdates = JSON.parse(button.dataset.remaining);
+                    remainingUpdates.forEach(update => renderUpdate(update));
+                    container.removeChild(button);
                 }
             });
-        }
 
-        const input = document.getElementById("searchBar").value.toLowerCase();
-        const cards = document.getElementsByClassName("blog-card");
+            // Fetch Updates from JSON
+            fetch("updates.json")
+                .then(response => response.json())
+                .then(allUpdates => {
+                    const initialUpdates = allUpdates.slice(0, UPDATES_TO_SHOW);
+                    initialUpdates.forEach(update => renderUpdate(update));
 
-        for (let i = 0; i < cards.length; i++) {
-            const card = cards[i];
-            const title = card.querySelector("h3").textContent.toLowerCase();
-            const matchesSearch = title.includes(input);
-            const matchesCategory = currentCategory === "all" || card.classList.contains(currentCategory);
-
-            if (matchesSearch && matchesCategory) {
-                card.classList.add("show");
-            } else {
-                card.classList.remove("show");
-            }
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        applyFilters("all");
-    });
-
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const container = document.getElementById("updates-container");
-        const UPDATES_TO_SHOW = 5; // The number of updates to show initially
-
-        // 1. Use event delegation for all clicks in the container
-        // This handles both "Read more" (expand) and "Show more" (load)
-        container.addEventListener("click", function(e) {
-            // Logic for expanding/collapsing content
-            if (e.target.classList.contains("expand-btn")) {
-                const content = e.target.previousElementSibling;
-                if (content && content.classList.contains("update-content")) {
-                    content.classList.toggle("expanded");
-                    e.target.textContent = content.classList.contains("expanded") ? "Read less" : "Read more";
-                }
-            }
-
-            // Logic for "Show more updates" button
-            if (e.target.classList.contains("show-more-btn")) {
-                const button = e.target;
-                // Get the remaining updates, which we stored on the button
-                const remainingUpdates = JSON.parse(button.dataset.remaining);
-
-                // Render the remaining updates
-                remainingUpdates.forEach(update => {
-                    renderUpdate(update);
+                    // Add "Show more" button if needed
+                    if (allUpdates.length > UPDATES_TO_SHOW) {
+                        const remainingUpdates = allUpdates.slice(UPDATES_TO_SHOW);
+                        const showMoreBtn = document.createElement("button");
+                        showMoreBtn.className = "show-more-btn";
+                        showMoreBtn.textContent = `Show ${remainingUpdates.length} more`;
+                        showMoreBtn.dataset.remaining = JSON.stringify(remainingUpdates);
+                        container.appendChild(showMoreBtn);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching updates:", error);
+                    container.innerHTML = "<p class='text-center'>Could not load updates.</p>";
                 });
 
-                // Remove the button
-                container.removeChild(button);
+            // Helper to render individual update cards
+            function renderUpdate(update) {
+                const card = document.createElement("div");
+                card.className = "update-card";
+                const showMoreBtn = container.querySelector('.show-more-btn');
+
+                card.innerHTML = `
+                    <h3>${update.title}</h3>
+                    <div class="date">${update.date}</div>
+                    <div class="update-content">${update.content}</div>
+                    <button class="expand-btn">Read more</button>
+                `;
+
+                if (showMoreBtn) {
+                    container.insertBefore(card, showMoreBtn);
+                } else {
+                    container.appendChild(card);
+                }
             }
         });
+    </script>
 
-        // 2. Fetch all updates from the JSON file
-        fetch("updates.json")
-            .then(response => response.json())
-            .then(allUpdates => {
-                // 3. Render the initial batch of updates
-                const initialUpdates = allUpdates.slice(0, UPDATES_TO_SHOW);
-                initialUpdates.forEach(update => {
-                    renderUpdate(update);
-                });
-
-                // 4. Check if a 'Show more' button is needed
-                if (allUpdates.length > UPDATES_TO_SHOW) {
-                    // Get the updates that are left
-                    const remainingUpdates = allUpdates.slice(UPDATES_TO_SHOW);
-
-                    // Create the button
-                    const showMoreBtn = document.createElement("button");
-                    showMoreBtn.className = "show-more-btn";
-                    showMoreBtn.textContent = `Show ${remainingUpdates.length} more`;
-
-                    // Store the remaining updates on the button's data attribute
-                    showMoreBtn.dataset.remaining = JSON.stringify(remainingUpdates);
-
-                    // Add the button to the end of the container
-                    container.appendChild(showMoreBtn);
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching updates:", error);
-                container.innerHTML = "<p>Could not load updates.</p>";
-            });
-
-        // 5. Helper function to create and add an update card
-        function renderUpdate(update) {
-            const card = document.createElement("div");
-            card.className = "update-card";
-
-            // Check if the "show more" button exists
-            const showMoreBtn = container.querySelector('.show-more-btn');
-
-            card.innerHTML = `
-      <h3>${update.title}</h3>
-      <div class="date">${update.date}</div>
-      <div class="update-content">
-        ${update.content}
-      </div>
-      <button class="expand-btn">Read more</button>
-    `;
-
-            // Insert the new card *before* the "Show more" button,
-            // or at the end if the button doesn't exist.
-            if (showMoreBtn) {
-                container.insertBefore(card, showMoreBtn);
-            } else {
-                container.appendChild(card);
-            }
-        }
-    });
-
-</script>
+</body>
 </html>

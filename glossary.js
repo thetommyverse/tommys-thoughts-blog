@@ -8,7 +8,15 @@ const glossary = {
     Tailwind: "A utility-first CSS framework used to quickly style web components and layouts.",
     Visualiser: "An interactive tool or widget that allows abstract concepts, such as sorting algorithms, to be seen in a visual, often animated, form.",
     UnpluggedActivity: "A teaching method that uses hands-on, offline activities to explain computing concepts without using a computer.",
-    LearningCycle: "A structured approach to lesson planning that includes stages such as recall, practice, and evaluation to support deep learning."
+    LearningCycle: "A structured approach to lesson planning that includes stages such as recall, practice, and evaluation to support deep learning.",
+    LLM: "Large Language Model. A type of AI trained on vast amounts of text to generate human-like language (e.g., ChatGPT, Claude).",
+    Hallucination: "When an AI model generates incorrect or nonsensical information confidently, often presenting it as fact.",
+    CPD: "Continuing Professional Development. Learning activities that professionals engage in to develop their abilities and knowledge.",
+    QTS: "Qualified Teacher Status. The accreditation required to teach in state-maintained schools in England and Wales.",
+    Pedagogy: "The method and practice of teaching, especially as an academic subject or theoretical concept.",
+    Scaffolding: "Instructional techniques used to move students progressively toward stronger understanding and ultimately greater independence in the learning process.",
+    AdaptiveLearning: "A learning approach that uses technology to adjust the presentation of material based on a learner's performance in real-time.",
+    ESL: "English as a Second Language. A program or method of teaching English to students whose primary language is not English.",
 };
 
 // === Style Injection ===
@@ -58,17 +66,27 @@ document.head.appendChild(style);
 
 // === Human-Readable Term Mapping ===
 const readableTerms = {
-    Gamification: "Gamification",
-    Prompt: "Prompt",
-    Algorithm: "Algorithm",
-    Binary: "Binary",
-    CanvaCode: "Canva Code",
-    AIgenerated: "AI-generated",
-    Tailwind: "Tailwind",
-    Visualiser: "Visualiser",
-    UnpluggedActivity: "Unplugged Activity",
-    LearningCycle: "Learning Cycle"
+  Gamification: 'Gamification',
+  Prompt: 'Prompt',
+  Algorithm: 'Algorithm',
+  Binary: 'Binary',
+  CanvaCode: 'Canva Code',
+  AIgenerated: 'AI-generated',
+  Tailwind: 'Tailwind',
+  Visualiser: 'Visualiser',
+  UnpluggedActivity: 'Unplugged Activity',
+  LearningCycle: 'Learning Cycle',
+  // New terms added below
+  LLM: 'LLM',
+  Hallucination: 'Hallucination',
+  CPD: 'CPD',
+  QTS: 'QTS',
+  Pedagogy: 'Pedagogy',
+  Scaffolding: 'Scaffolding',
+  AdaptiveLearning: 'Adaptive Learning',
+  ESL: 'ESL',
 };
+
 
 // === Highlight Glossary Terms in <p> tags (excluding links) ===
 function highlightGlossaryTerms() {
