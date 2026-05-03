@@ -17,6 +17,8 @@ const glossary = {
     Scaffolding: "Instructional techniques used to move students progressively toward stronger understanding and ultimately greater independence in the learning process.",
     AdaptiveLearning: "A learning approach that uses technology to adjust the presentation of material based on a learner's performance in real-time.",
     ESL: "English as a Second Language. A program or method of teaching English to students whose primary language is not English.",
+    CognitiveOverload: "When the working memory receives more information than it can process comfortably, hindering learning.",
+    DualCoding: "The practice of combining verbal materials with visual materials to reduce cognitive load and enhance learning and retention.",
 };
 
 // === Style Injection ===
@@ -85,6 +87,8 @@ const readableTerms = {
   Scaffolding: 'Scaffolding',
   AdaptiveLearning: 'Adaptive Learning',
   ESL: 'ESL',
+  CognitiveOverload: 'Cognitive Overload',
+  DualCoding: 'Dual Coding',
 };
 
 
